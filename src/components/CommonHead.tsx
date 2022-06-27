@@ -1,7 +1,7 @@
+import type { NextPage } from "next";
 import Head from "next/head";
-import React from "react";
 
-const CommonHead = () => {
+const CommonHead: NextPage = () => {
   return (
     <Head>
       <title>Welcome</title>
