@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { Prism } from "@mantine/prism";
 import { useMantineTheme } from "@mantine/core";
+import DisqusEmbed from "../components/disqus/DisqusEmbed";
 
 const demoCode = `import { Button } from '@mantine/core';
 
@@ -41,6 +42,10 @@ const Home: NextPage = () => {
 
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
+
+      <main style={{ margin: "50px 20px" }}>
+        <DisqusEmbed />
+      </main>
     </div>
   );
 };
