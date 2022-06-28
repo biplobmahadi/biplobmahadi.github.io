@@ -7,6 +7,7 @@ import {
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import Layout from "../components/common/Layout";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -19,6 +20,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <Fragment>
+      <Head>
+        <meta name="description" content="My Personal App to Share Knowledge" />
+        <link rel="icon" href="/main.ico" />
+      </Head>
       <ColorSchemeProvider
         colorScheme={colorScheme}
         toggleColorScheme={toggleColorScheme}
