@@ -52,6 +52,13 @@ export default function Layout({ children }: IChildProp) {
                 <Home size={16} />
               </ActionIcon>
               <Group>
+                <ActionIcon
+                  onClick={() => router.push("/blogs/advance-axios")}
+                  variant="default"
+                  size={30}
+                >
+                  <Home size={16} />
+                </ActionIcon>
                 <Text weight={700} size="lg">
                   Welcome, It&apos;s Biplob
                 </Text>
