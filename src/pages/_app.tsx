@@ -6,8 +6,8 @@ import {
   MantineProvider,
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
-import Layout from "../components/common/Layout";
 import Head from "next/head";
+import Layout from "../components/common/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
