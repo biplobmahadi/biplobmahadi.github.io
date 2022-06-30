@@ -44,9 +44,7 @@ const AdvanceAxios: NextPage = () => {
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
 
-      <main style={{ margin: "50px 20px" }}>
-        <DisqusEmbed />
-      </main>
+      <main style={{ margin: "50px 20px" }}>{/* <DisqusEmbed /> */}</main>
     </div>
   );
 };
