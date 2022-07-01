@@ -63,6 +63,11 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
     paddingBottom: 0,
   },
+  navbarWithoutDocs: {
+    [theme.fn.largerThan("sm")]: {
+      display: "none",
+    },
+  },
   links: {
     marginLeft: -theme.spacing.md,
     marginRight: -theme.spacing.md,
@@ -75,9 +80,10 @@ const useStyles = createStyles((theme) => ({
 
 interface IProps {
   opened: boolean;
+  folderPath: string;
 }
 
-export default function CustomNavbar({ opened }: IProps) {
+export default function CustomNavbar({ opened, folderPath }: IProps) {
   const { classes } = useStyles();
   const headerlinks = headermockdata.map((item) => (
     <LinksGroup {...item} key={item.label} />
@@ -92,7 +98,9 @@ export default function CustomNavbar({ opened }: IProps) {
       hidden={!opened}
       width={{ sm: 200, lg: 260 }}
       p="md"
-      className={classes.navbar}
+      className={`${classes.navbar} ${
+        folderPath === "docs" ? "" : classes.navbarWithoutDocs
+      }`}
     >
       <Navbar.Section grow className={classes.links} component={ScrollArea}>
         {opened && <div className={classes.linksInner}>{headerlinks}</div>}

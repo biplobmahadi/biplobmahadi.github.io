@@ -32,7 +32,9 @@ export default function Layout({ children }: IChildProp) {
       fixed
       header={<CustomHeader opened={opened} setOpened={setOpened} />}
       navbar={
-        folderPath === "docs" ? <CustomNavbar opened={opened} /> : undefined
+        folderPath === "docs" || opened ? (
+          <CustomNavbar opened={opened} folderPath={folderPath} />
+        ) : undefined
       }
       aside={
         folderPath === "docs" ? (
