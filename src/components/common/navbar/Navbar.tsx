@@ -63,7 +63,7 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
     paddingBottom: 0,
   },
-  navbarWithoutDocs: {
+  hidingLogic: {
     [theme.fn.largerThan("sm")]: {
       display: "none",
     },
@@ -99,12 +99,18 @@ export default function CustomNavbar({ opened, folderPath }: IProps) {
       width={{ sm: 200, lg: 260 }}
       p="md"
       className={`${classes.navbar} ${
-        folderPath === "docs" ? "" : classes.navbarWithoutDocs
+        folderPath === "docs" ? "" : classes.hidingLogic
       }`}
     >
       <Navbar.Section grow className={classes.links} component={ScrollArea}>
-        {opened && <div className={classes.linksInner}>{headerlinks}</div>}
-        <div className={classes.linksInner}>{links}</div>
+        {opened && (
+          <div className={`${classes.linksInner} ${classes.hidingLogic}`}>
+            {headerlinks}
+          </div>
+        )}
+        {folderPath === "docs" && (
+          <div className={classes.linksInner}>{links}</div>
+        )}
       </Navbar.Section>
     </Navbar>
   );
