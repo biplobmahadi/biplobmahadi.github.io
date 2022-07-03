@@ -8,7 +8,11 @@ const UIPaths = {
     },
   },
   Docs: (subPath: string, slug?: string) => {
-    return `/docs/${subPath}/${slug}`;
+    let route = `/docs/${subPath}`;
+    if (slug) {
+      route += `/${slug}`;
+    }
+    return route;
   },
 };
 
