@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { Fragment } from "react";
 import { blogTitlesAndPaths } from "../../../blogs";
@@ -14,6 +15,9 @@ const AllBlog = () => {
 
   return (
     <Fragment>
+      <Head>
+        <title>{renderedBlog?.title}</title>
+      </Head>
       <h3>{renderedBlog?.title}</h3>
       {RenderedComponent && <RenderedComponent />}
     </Fragment>
