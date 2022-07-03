@@ -9,6 +9,7 @@ import {
 } from "@mantine/core";
 import DarkmodeSwitch from "./DarkmodeSwitch";
 import { useRouter } from "next/router";
+import UIPaths from "../../paths/uiPaths";
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -64,7 +65,7 @@ const CustomHeader = ({ opened, setOpened }: CustomHeaderProps) => {
               variant="default"
               radius="xl"
               size="xs"
-              onClick={() => router.push("/")}
+              onClick={() => router.push(UIPaths.Home)}
             >
               Home
             </Button>
@@ -72,7 +73,7 @@ const CustomHeader = ({ opened, setOpened }: CustomHeaderProps) => {
               variant="default"
               radius="xl"
               size="xs"
-              onClick={() => router.push("/docs/welcome")}
+              onClick={() => router.push(UIPaths.Docs("welcome"))}
             >
               Docs
             </Button>
@@ -80,7 +81,7 @@ const CustomHeader = ({ opened, setOpened }: CustomHeaderProps) => {
               variant="default"
               radius="xl"
               size="xs"
-              onClick={() => router.push("/blogs/advance-axios")}
+              onClick={() => router.push(UIPaths.Blogs.Root)}
             >
               Blogs
             </Button>
@@ -88,7 +89,7 @@ const CustomHeader = ({ opened, setOpened }: CustomHeaderProps) => {
               variant="default"
               radius="xl"
               size="xs"
-              onClick={() => router.push("/about")}
+              onClick={() => router.push(UIPaths.About)}
             >
               About
             </Button>

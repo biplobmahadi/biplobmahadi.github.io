@@ -14,6 +14,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "tabler-icons-react";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   control: {
@@ -66,6 +67,7 @@ const useStyles = createStyles((theme) => ({
 interface LinksGroupProps {
   icon: TablerIcon;
   label: string;
+  eachLink?: string;
   initiallyOpened?: boolean;
   links?: { label: string; link: string }[];
 }
@@ -73,6 +75,7 @@ interface LinksGroupProps {
 export default function LinksGroup({
   icon: Icon,
   label,
+  eachLink,
   initiallyOpened,
   links,
 }: LinksGroupProps) {
@@ -99,12 +102,14 @@ export default function LinksGroup({
         className={classes.control}
       >
         <Group position="apart" spacing={0}>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <ThemeIcon variant="light" size={30}>
-              <Icon size={18} />
-            </ThemeIcon>
-            <Box ml="md">{label}</Box>
-          </Box>
+          <Link href={eachLink ? eachLink : ""}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <ThemeIcon variant="light" size={30}>
+                <Icon size={18} />
+              </ThemeIcon>
+              <Box ml="md">{label}</Box>
+            </Box>
+          </Link>
           {hasLinks && (
             <ChevronIcon
               className={classes.chevron}
@@ -120,30 +125,5 @@ export default function LinksGroup({
       </UnstyledButton>
       {hasLinks ? <Collapse in={opened}>{items}</Collapse> : null}
     </>
-  );
-}
-
-const mockdata = {
-  label: "Releases",
-  icon: CalendarStats,
-  links: [
-    { label: "Upcoming releases", link: "/" },
-    { label: "Previous releases", link: "/" },
-    { label: "Releases schedule", link: "/" },
-  ],
-};
-
-export function NavbarLinksGroup() {
-  return (
-    <Box
-      sx={(theme) => ({
-        minHeight: 220,
-        padding: theme.spacing.md,
-        backgroundColor:
-          theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
-      })}
-    >
-      <LinksGroup {...mockdata} />
-    </Box>
   );
 }

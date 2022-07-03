@@ -12,21 +12,21 @@ import {
   Dashboard,
   Database,
 } from "tabler-icons-react";
+import UIPaths from "../../../paths/uiPaths";
 import LinksGroup from "./navbarLinksGroup";
 
 const headermockdata = [
-  { label: "Home", icon: Home },
-  { label: "Docs", icon: Dashboard },
-  { label: "Blogs", icon: Database },
-  { label: "About", icon: User },
+  { label: "Home", icon: Home, eachLink: UIPaths.Home },
+  { label: "Docs", icon: Dashboard, eachLink: UIPaths.Docs("welcome") },
+  { label: "Blogs", icon: Database, eachLink: UIPaths.Blogs.Root },
+  { label: "About", icon: User, eachLink: UIPaths.About },
 ];
 
 const mockdata = [
-  { label: "Dashboard", icon: Gauge },
+  { label: "Welcome", icon: Gauge, eachLink: UIPaths.Docs("welcome") },
   {
     label: "Market news",
     icon: Notes,
-    initiallyOpened: true,
     links: [
       { label: "Overview", link: "/" },
       { label: "Forecasts", link: "/" },
