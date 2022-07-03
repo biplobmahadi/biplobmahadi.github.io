@@ -1,14 +1,9 @@
 import type { NextPage } from "next";
-import { Prism } from "@mantine/prism";
 import { Blockquote, Center, useMantineTheme } from "@mantine/core";
-import DisqusEmbed from "../components/disqus/DisqusEmbed";
 import Head from "next/head";
-
-const demoCode = `import { Button } from '@mantine/core';
-
-function Demo() {
-  return <Button>Hello</Button>
-}`;
+import Link from "next/link";
+import { blogTitlesAndPaths } from "../../blogs";
+import { IBlogTitleAndPaths } from "../interfaces/blogs";
 
 const Home: NextPage = () => {
   return (
@@ -21,6 +16,14 @@ const Home: NextPage = () => {
           Don&apos;t Blame, Improve Together. Remember - Improvements are
           Endless!
         </Blockquote>
+      </Center>
+      <Center>
+        <h4>My Blogs</h4>
+        {blogTitlesAndPaths.map((blog: IBlogTitleAndPaths) => (
+          <div key={blog.title}>
+            <Link href={`/${blog.path}`}>{blog.title}</Link>
+          </div>
+        ))}
       </Center>
     </div>
   );
