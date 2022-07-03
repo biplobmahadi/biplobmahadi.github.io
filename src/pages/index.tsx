@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { blogTitlesAndPaths } from "../../blogs";
 import { IBlogTitleAndPaths } from "../interfaces/blogs";
+import UIPaths from "../paths/uiPaths";
 
 const Home: NextPage = () => {
   return (
@@ -17,14 +18,14 @@ const Home: NextPage = () => {
           Endless!
         </Blockquote>
       </Center>
-      <Center>
-        <h4>My Blogs</h4>
-        {blogTitlesAndPaths.map((blog: IBlogTitleAndPaths) => (
-          <div key={blog.title}>
-            <Link href={`/${blog.path}`}>{blog.title}</Link>
-          </div>
-        ))}
-      </Center>
+      <h4>My Blogs</h4>
+      {blogTitlesAndPaths.map((blog: IBlogTitleAndPaths) => (
+        <div key={blog.title}>
+          <Link href={UIPaths.Blogs.GetSingleBlog(blog.path)}>
+            {blog.title}
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };
