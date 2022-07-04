@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Fragment } from "react";
-import { IBlogTitleAndPaths } from "../../../interfaces/blogs";
+import { IBlogsDetails } from "../../../interfaces/blogs";
 import UIPaths from "../../../paths/uiPaths";
-import { blogTitlesAndPaths } from "../../../utils/blogs";
+import { blogsDetails } from "../../../utils/blogs";
 
 export const BlogSection = () => {
   return (
     <Fragment>
-      {blogTitlesAndPaths.map((blog: IBlogTitleAndPaths) => (
+      {blogsDetails.map((blog: IBlogsDetails) => (
         <div key={blog.title}>
           <Link href={UIPaths.Blogs.GetSingleBlog(blog.path)}>
             {blog.title}

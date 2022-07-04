@@ -1,23 +1,23 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import {
+  IBlogsDetails,
   IBlogSectionWithoutCurrent,
-  IBlogTitleAndPaths,
 } from "../../../interfaces/blogs";
 import UIPaths from "../../../paths/uiPaths";
-import { blogTitlesAndPaths } from "../../../utils/blogs";
+import { blogsDetails } from "../../../utils/blogs";
 
 export const BlogSectionWithoutCurrent = ({
   currentBlogTitle,
 }: IBlogSectionWithoutCurrent) => {
-  const blogTitlesAndPathsWithoutCurrent = blogTitlesAndPaths.filter(
-    (blog: IBlogTitleAndPaths) => {
+  const blogTitlesAndPathsWithoutCurrent = blogsDetails.filter(
+    (blog: IBlogsDetails) => {
       return blog.title !== currentBlogTitle;
     }
   );
   return (
     <Fragment>
-      {blogTitlesAndPathsWithoutCurrent.map((blog: IBlogTitleAndPaths) => (
+      {blogTitlesAndPathsWithoutCurrent.map((blog: IBlogsDetails) => (
         <div key={blog.title}>
           <Link href={UIPaths.Blogs.GetSingleBlog(blog.path)}>
             {blog.title}

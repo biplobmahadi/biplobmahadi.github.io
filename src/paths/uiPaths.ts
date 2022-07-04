@@ -8,7 +8,7 @@ const UIPaths = {
     },
   },
   Docs: {
-    Root: "/docs",
+    Root: "/docs/welcome",
     Axios: {
       AxiosAdvance: "/docs/axios/axios-advance",
     },
