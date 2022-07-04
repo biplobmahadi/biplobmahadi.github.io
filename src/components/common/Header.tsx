@@ -73,7 +73,7 @@ const CustomHeader = ({ opened, setOpened }: CustomHeaderProps) => {
               variant="default"
               radius="xl"
               size="xs"
-              onClick={() => router.push(UIPaths.Docs("welcome"))}
+              onClick={() => router.push(UIPaths.Docs.Root)}
             >
               Docs
             </Button>

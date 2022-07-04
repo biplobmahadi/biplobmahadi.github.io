@@ -7,12 +7,14 @@ const UIPaths = {
       return `/blogs/${slug}`;
     },
   },
-  Docs: (subPath: string, slug?: string) => {
-    let route = `/docs/${subPath}`;
-    if (slug) {
-      route += `/${slug}`;
-    }
-    return route;
+  Docs: {
+    Root: "/docs/welcome",
+    Axios: {
+      AxiosAdvance: "/docs/axios/axios-advance",
+    },
+    ReactRouter: {
+      ReactRouterAdvance: "/docs/react-router/react-router-advance",
+    },
   },
 };
 

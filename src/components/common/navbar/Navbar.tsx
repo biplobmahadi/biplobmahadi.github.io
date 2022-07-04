@@ -17,13 +17,13 @@ import LinksGroup from "./navbarLinksGroup";
 
 const headermockdata = [
   { label: "Home", icon: Home, eachLink: UIPaths.Home },
-  { label: "Docs", icon: Dashboard, eachLink: UIPaths.Docs("welcome") },
+  { label: "Docs", icon: Dashboard, eachLink: UIPaths.Docs.Root },
   { label: "Blogs", icon: Database, eachLink: UIPaths.Blogs.Root },
   { label: "About", icon: User, eachLink: UIPaths.About },
 ];
 
 const mockdata = [
-  { label: "Welcome", icon: Gauge, eachLink: UIPaths.Docs("welcome") },
+  { label: "Welcome", icon: Gauge, eachLink: UIPaths.Docs.Root },
   {
     label: "Market news",
     icon: Notes,

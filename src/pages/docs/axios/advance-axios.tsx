@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { Prism } from "@mantine/prism";
 import { useMantineTheme } from "@mantine/core";
 import Head from "next/head";
-import DisqusEmbed from "../../components/disqus/DisqusEmbed";
+import DisqusEmbed from "../../../components/disqus/DisqusEmbed";
 
 const demoCode = `import { Button } from '@mantine/core';
 
