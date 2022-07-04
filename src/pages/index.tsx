@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { Blockquote, Center, useMantineTheme } from "@mantine/core";
 import Head from "next/head";
 import Link from "next/link";
-import { blogTitlesAndPaths } from "../../blogs";
+import { blogTitlesAndPaths } from "../utils/blogs";
 import { IBlogTitleAndPaths } from "../interfaces/blogs";
 import UIPaths from "../paths/uiPaths";
 

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Fragment } from "react";
-import { blogTitlesAndPaths } from "../../../blogs";
+import { blogTitlesAndPaths } from "../../utils/blogs";
 import { IBlogTitleAndPaths } from "../../interfaces/blogs";
 
 const AllBlog = () => {
