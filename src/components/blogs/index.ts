@@ -1,2 +1,2 @@
-export * from "./HelloWorld";
-export * from "./HelloWorld2";
+export * from "./HelloWorld.component";
+export * from "./HelloWorld2.component";
