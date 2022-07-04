@@ -1,1 +1,1 @@
-export * from "./titlesAndPaths";
+export * from "./blogsDetails";

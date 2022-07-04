@@ -1,1 +1,2 @@
-export * from "./blogTitlesAndPaths.interface";
+export * from "./blogsDetails.interface";
+export * from "./blogSectionWithoutCurrent.interface";
