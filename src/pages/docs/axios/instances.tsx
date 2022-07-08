@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
-const instances: NextPage = () => {
-  return <div>instances</div>;
+const Instances: NextPage = () => {
+  return <div>Instances</div>;
 };
 
-export default instances;
+export default Instances;
