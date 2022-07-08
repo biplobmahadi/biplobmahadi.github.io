@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run lint && next build",
     "start": "next start",
     "export": "next export",
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^2.0.6",
     "@mantine/core": "^4.2.11",
     "@mantine/hooks": "^4.2.11",
     "@mantine/prism": "^4.2.11",
