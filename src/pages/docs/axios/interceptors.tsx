@@ -9,7 +9,7 @@ function Demo() {
   return <Button>Hello</Button>
 }`;
 
-const AdvanceAxios: NextPage = () => {
+const Interceptors: NextPage = () => {
   const { colorScheme } = useMantineTheme();
   return (
     <div>
@@ -50,4 +50,4 @@ const AdvanceAxios: NextPage = () => {
   );
 };
 
-export default AdvanceAxios;
+export default Interceptors;
