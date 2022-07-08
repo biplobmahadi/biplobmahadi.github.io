@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import { BlogSection } from "../../components/blogs";
+import { AllBlogs } from "../../components/blogs";
 
 const WelcomeToBlog = () => {
   return (
@@ -10,7 +10,7 @@ const WelcomeToBlog = () => {
       </Head>
       <h4>Welcome to my blog</h4>
 
-      <BlogSection />
+      <AllBlogs />
     </Fragment>
   );
 };

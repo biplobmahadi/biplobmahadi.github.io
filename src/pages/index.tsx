@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { Blockquote, Center } from "@mantine/core";
 import Head from "next/head";
-import { BlogSection } from "../components/blogs";
 
 const Home: NextPage = () => {
   return (
@@ -15,8 +14,6 @@ const Home: NextPage = () => {
           Endless!
         </Blockquote>
       </Center>
-      <h4>My Blogs</h4>
-      <BlogSection />
     </div>
   );
 };
