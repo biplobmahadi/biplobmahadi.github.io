@@ -3,6 +3,7 @@ import { Prism } from "@mantine/prism";
 import { useMantineTheme } from "@mantine/core";
 import Head from "next/head";
 import DisqusEmbed from "../../../components/disqus/DisqusEmbed";
+import GiscusDiscussion from "../../../libs/giscus";
 
 const demoCode = `import { Button } from '@mantine/core';
 
@@ -11,7 +12,7 @@ function Demo() {
 }`;
 
 const AdvanceAxios: NextPage = () => {
-  const theme = useMantineTheme();
+  const { colorScheme } = useMantineTheme();
   return (
     <div>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
@@ -25,18 +26,18 @@ const AdvanceAxios: NextPage = () => {
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <Prism
-        sx={{ marginTop: "100px" }}
+        sx={{ margin: "100px" }}
         language="tsx"
         withLineNumbers
-        colorScheme={theme.colorScheme === "dark" ? "light" : "dark"}
+        colorScheme={colorScheme === "dark" ? "light" : "dark"}
       >
         {demoCode}
       </Prism>
       <Prism
-        sx={{ marginTop: "100px" }}
+        sx={{ margin: "100px" }}
         language="tsx"
         withLineNumbers
-        colorScheme={theme.colorScheme === "dark" ? "light" : "dark"}
+        colorScheme={colorScheme === "dark" ? "light" : "dark"}
       >
         {demoCode}
       </Prism>
@@ -45,6 +46,9 @@ const AdvanceAxios: NextPage = () => {
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
 
       <main style={{ margin: "50px 20px" }}>{/* <DisqusEmbed /> */}</main>
+      <main style={{ margin: "50px 20px" }}>
+        <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+      </main>
     </div>
   );
 };
