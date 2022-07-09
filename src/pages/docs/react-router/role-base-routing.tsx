@@ -1,8 +1,16 @@
 import { NextPage } from "next";
-import React from "react";
+import Head from "next/head";
+import React, { Fragment } from "react";
 
 const RoleBaseRouting: NextPage = () => {
-  return <div>RoleBaseRouting</div>;
+  return (
+    <Fragment>
+      <Head>
+        <title>Role Base Routing</title>
+      </Head>
+      <div>RoleBaseRouting</div>
+    </Fragment>
+  );
 };
 
 export default RoleBaseRouting;

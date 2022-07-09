@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { Prism } from "@mantine/prism";
 import { useMantineTheme } from "@mantine/core";
 import GiscusDiscussion from "../../../libs/giscus";
+import Head from "next/head";
 
 const demoCode = `import { Button } from '@mantine/core';
 
@@ -13,6 +14,9 @@ const Interceptors: NextPage = () => {
   const { colorScheme } = useMantineTheme();
   return (
     <div>
+      <Head>
+        <title>Interceptors</title>
+      </Head>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
