@@ -8,12 +8,16 @@ const UIPaths = {
     },
   },
   Docs: {
-    Root: "/docs/welcome",
+    Root: "/docs",
     Axios: {
-      AxiosAdvance: "/docs/axios/axios-advance",
+      GetAxiosDoc: (slug: string) => {
+        return `/docs/axios/${slug}`;
+      },
     },
     ReactRouter: {
-      ReactRouterAdvance: "/docs/react-router/react-router-advance",
+      GetReactRouterDoc: (slug: string) => {
+        return `/docs/react-router/${slug}`;
+      },
     },
   },
 };
