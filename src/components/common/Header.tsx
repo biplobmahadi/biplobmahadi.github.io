@@ -39,9 +39,10 @@ const useStyles = createStyles((theme) => ({
 interface CustomHeaderProps {
   opened: boolean;
   setOpened: Function;
+  setActive: Function;
 }
 
-const CustomHeader = ({ opened, setOpened }: CustomHeaderProps) => {
+const CustomHeader = ({ opened, setOpened, setActive }: CustomHeaderProps) => {
   const { classes } = useStyles();
   const router = useRouter();
 
@@ -73,7 +74,10 @@ const CustomHeader = ({ opened, setOpened }: CustomHeaderProps) => {
               variant="default"
               radius="xl"
               size="xs"
-              onClick={() => router.push(UIPaths.Docs.Root)}
+              onClick={() => {
+                router.push(UIPaths.Docs.Root);
+                setActive("");
+              }}
             >
               Docs
             </Button>

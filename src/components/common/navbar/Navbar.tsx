@@ -2,11 +2,6 @@ import { Navbar, ScrollArea, createStyles } from "@mantine/core";
 import {
   Notes,
   CalendarStats,
-  Gauge,
-  PresentationAnalytics,
-  FileAnalytics,
-  Adjustments,
-  Lock,
   Home,
   User,
   Dashboard,
@@ -23,36 +18,25 @@ const headermockdata = [
 ];
 
 const mockdata = [
-  { label: "Welcome", icon: Gauge, eachLink: UIPaths.Docs.Root },
   {
-    label: "Market news",
+    label: "Axios for React",
     icon: Notes,
     links: [
-      { label: "Overview", link: "/" },
-      { label: "Forecasts", link: "/" },
-      { label: "Outlook", link: "/" },
-      { label: "Real time", link: "/" },
+      {
+        label: "Interceptors",
+        link: UIPaths.Docs.Axios.GetAxiosDoc("interceptors"),
+      },
+      { label: "Instances", link: UIPaths.Docs.Axios.GetAxiosDoc("instances") },
     ],
   },
   {
-    label: "Releases",
+    label: "React Router",
     icon: CalendarStats,
     links: [
-      { label: "Upcoming releases", link: "/" },
-      { label: "Previous releases", link: "/" },
-      { label: "Releases schedule", link: "/" },
-    ],
-  },
-  { label: "Analytics", icon: PresentationAnalytics },
-  { label: "Contracts", icon: FileAnalytics },
-  { label: "Settings", icon: Adjustments },
-  {
-    label: "Security",
-    icon: Lock,
-    links: [
-      { label: "Enable 2FA", link: "/" },
-      { label: "Change password", link: "/" },
-      { label: "Recovery codes", link: "/" },
+      {
+        label: "Role Based Routing",
+        link: UIPaths.Docs.ReactRouter.GetReactRouterDoc("role-base-routing"),
+      },
     ],
   },
 ];
@@ -80,23 +64,45 @@ const useStyles = createStyles((theme) => ({
 
 interface IProps {
   opened: boolean;
+  setOpened: Function;
+  active: string;
+  setActive: Function;
   folderPath: string;
 }
 
-export default function CustomNavbar({ opened, folderPath }: IProps) {
+export default function CustomNavbar({
+  opened,
+  setOpened,
+  folderPath,
+  active,
+  setActive,
+}: IProps) {
   const { classes } = useStyles();
+
   const headerlinks = headermockdata.map((item) => (
-    <LinksGroup {...item} key={item.label} />
+    <LinksGroup
+      {...item}
+      key={item.label}
+      opened={opened}
+      setOpened={setOpened}
+    />
   ));
   const links = mockdata.map((item) => (
-    <LinksGroup {...item} key={item.label} />
+    <LinksGroup
+      {...item}
+      key={item.label}
+      opened={opened}
+      setOpened={setOpened}
+      active={active!}
+      setActive={setActive}
+    />
   ));
 
   return (
     <Navbar
       hiddenBreakpoint="sm"
       hidden={!opened}
-      width={{ sm: 200, lg: 260 }}
+      width={{ sm: 180, lg: 240 }}
       p="md"
       className={`${classes.navbar} ${
         folderPath === "docs" ? "" : classes.hidingLogic
