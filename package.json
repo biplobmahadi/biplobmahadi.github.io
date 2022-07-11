@@ -1,6 +1,6 @@
 {
-  "name": "github-page",
-  "version": "0.1.0",
+  "name": "biplob-mahadi",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
