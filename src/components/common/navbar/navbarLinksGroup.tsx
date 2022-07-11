@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Group,
   Box,
@@ -14,6 +14,7 @@ import {
   ChevronRight,
 } from "tabler-icons-react";
 import { useRouter } from "next/router";
+import { ITableOfContent } from "../../../interfaces/docs";
 
 const useStyles = createStyles((theme, _params, getRef) => {
   const icon = getRef("icon");
@@ -91,11 +92,12 @@ interface LinksGroupProps {
   label: string;
   opened: boolean;
   setOpened: Function;
+  setTableOfContent?: Function;
   active?: string;
   setActive?: Function;
   eachLink?: string;
   initiallyOpened?: boolean;
-  links?: { label: string; link: string }[];
+  links?: { label: string; link: string; tableOfContent?: ITableOfContent[] }[];
 }
 
 export default function LinksGroup({
@@ -108,12 +110,25 @@ export default function LinksGroup({
   eachLink,
   initiallyOpened,
   links,
+  setTableOfContent,
 }: LinksGroupProps) {
   const router = useRouter();
   const { classes, theme, cx } = useStyles();
   const hasLinks = Array.isArray(links);
   const [open, setOpen] = useState(initiallyOpened || false);
   const ChevronIcon = theme.dir === "ltr" ? ChevronRight : ChevronLeft;
+
+  const { pathname } = router;
+
+  useEffect(() => {
+    links?.forEach((link) => {
+      if (pathname === link.link) {
+        setOpen(true);
+        setTableOfContent?.(link.tableOfContent ? link.tableOfContent : []);
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const items = (hasLinks ? links : []).map((link) => (
     <Text<"a">
@@ -124,6 +139,7 @@ export default function LinksGroup({
       href={link.link}
       key={link.label}
       onClick={(event) => {
+        setTableOfContent?.(link.tableOfContent ? link.tableOfContent : []);
         event.preventDefault();
         setActive?.(link.link);
         router.push(link.link);

@@ -7,6 +7,10 @@ import {
   Dashboard,
   Database,
 } from "tabler-icons-react";
+import {
+  axiosInstancesTOC,
+  axiosInterceptorsTOC,
+} from "../../../consts/tableOfContent";
 import UIPaths from "../../../paths/uiPaths";
 import LinksGroup from "./navbarLinksGroup";
 
@@ -25,8 +29,13 @@ const mockdata = [
       {
         label: "Interceptors",
         link: UIPaths.Docs.Axios.GetAxiosDoc("interceptors"),
+        tableOfContent: axiosInterceptorsTOC,
       },
-      { label: "Instances", link: UIPaths.Docs.Axios.GetAxiosDoc("instances") },
+      {
+        label: "Instances",
+        link: UIPaths.Docs.Axios.GetAxiosDoc("instances"),
+        tableOfContent: axiosInstancesTOC,
+      },
     ],
   },
   {
@@ -68,6 +77,7 @@ interface IProps {
   active: string;
   setActive: Function;
   folderPath: string;
+  setTableOfContent: Function;
 }
 
 export default function CustomNavbar({
@@ -76,6 +86,7 @@ export default function CustomNavbar({
   folderPath,
   active,
   setActive,
+  setTableOfContent,
 }: IProps) {
   const { classes } = useStyles();
 
@@ -95,6 +106,7 @@ export default function CustomNavbar({
       setOpened={setOpened}
       active={active!}
       setActive={setActive}
+      setTableOfContent={setTableOfContent}
     />
   ));
 
