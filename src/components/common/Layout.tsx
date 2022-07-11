@@ -5,7 +5,7 @@ import IChildProp from "../../interfaces/common/IChildProp";
 import CustomNavbar from "./navbar/Navbar";
 import { useRouter } from "next/router";
 import { TableOfContent } from "../docs/tableOfContent";
-import { tableOfContentData } from "../../consts";
+import { ITableOfContent } from "../../interfaces/docs";
 
 export default function Layout({ children }: IChildProp) {
   const theme = useMantineTheme();
@@ -16,6 +16,8 @@ export default function Layout({ children }: IChildProp) {
   const [active, setActive] = useState<string>(
     folderPath === "docs" ? pathname : ""
   );
+
+  const [tableOfContent, setTableOfContent] = useState<ITableOfContent[]>([]);
 
   return (
     <AppShell
@@ -35,6 +37,7 @@ export default function Layout({ children }: IChildProp) {
           opened={opened}
           setOpened={setOpened}
           setActive={setActive}
+          setTableOfContent={setTableOfContent}
         />
       }
       navbar={
@@ -45,14 +48,15 @@ export default function Layout({ children }: IChildProp) {
             active={active}
             setActive={setActive}
             folderPath={folderPath}
+            setTableOfContent={setTableOfContent}
           />
         ) : undefined
       }
       aside={
-        folderPath === "docs" ? (
+        folderPath === "docs" && tableOfContent.length ? (
           <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
             <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 220, lg: 280 }}>
-              <TableOfContent links={tableOfContentData} />
+              <TableOfContent links={tableOfContent} />
             </Aside>
           </MediaQuery>
         ) : undefined
