@@ -40,9 +40,15 @@ interface CustomHeaderProps {
   opened: boolean;
   setOpened: Function;
   setActive: Function;
+  setTableOfContent: Function;
 }
 
-const CustomHeader = ({ opened, setOpened, setActive }: CustomHeaderProps) => {
+const CustomHeader = ({
+  opened,
+  setOpened,
+  setActive,
+  setTableOfContent,
+}: CustomHeaderProps) => {
   const { classes } = useStyles();
   const router = useRouter();
 
@@ -77,6 +83,7 @@ const CustomHeader = ({ opened, setOpened, setActive }: CustomHeaderProps) => {
               onClick={() => {
                 router.push(UIPaths.Docs.Root);
                 setActive("");
+                setTableOfContent([]);
               }}
             >
               Docs
