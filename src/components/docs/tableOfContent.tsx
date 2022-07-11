@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createStyles, Box, Text, Group } from "@mantine/core";
 import { ListSearch } from "tabler-icons-react";
+import { ITableOfContent } from "../../interfaces/docs";
+import { useRouter } from "next/router";
 
 const LINK_HEIGHT = 38;
 const INDICATOR_SIZE = 10;
@@ -55,12 +57,38 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface TableOfContentProps {
-  links: { label: string; link: string; order: number }[];
+  links: ITableOfContent[];
 }
 
 export function TableOfContent({ links }: TableOfContentProps) {
   const { classes, cx } = useStyles();
-  const [active, setActive] = useState(2);
+
+  const router = useRouter();
+  const { asPath, pathname } = router;
+  const hashPath = asPath.includes("#")
+    ? asPath.substring(asPath.indexOf("#"))
+    : "";
+
+  const [active, setActive] = useState<string>();
+  const [activeIndex, setActiveIndex] = useState<number>();
+
+  useEffect(() => {
+    if (hashPath) {
+      setActive(hashPath);
+      links.forEach((element, index) => {
+        if (element.link === hashPath) {
+          setActiveIndex(index);
+        }
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    if (!hashPath) {
+      setActive("");
+      setActiveIndex(0);
+    }
+  }, [asPath, hashPath]);
 
   const items = links.map((item, index) => (
     <Box<"a">
@@ -68,10 +96,18 @@ export function TableOfContent({ links }: TableOfContentProps) {
       href={item.link}
       onClick={(event) => {
         event.preventDefault();
-        setActive(index);
+        setActive(item.link);
+        setActiveIndex(index);
+        router.push(
+          { pathname: pathname, hash: item.link },
+          pathname + item.link,
+          { scroll: false, shallow: true }
+        );
       }}
       key={item.label}
-      className={cx(classes.link, { [classes.linkActive]: active === index })}
+      className={cx(classes.link, {
+        [classes.linkActive]: active === item.link,
+      })}
       sx={(theme) => ({ paddingLeft: item.order * theme.spacing.lg })}
     >
       {item.label}
@@ -89,7 +125,7 @@ export function TableOfContent({ links }: TableOfContentProps) {
           className={classes.indicator}
           style={{
             transform: `translateY(${
-              active * LINK_HEIGHT + INDICATOR_OFFSET
+              activeIndex && activeIndex * LINK_HEIGHT + INDICATOR_OFFSET
             }px)`,
           }}
         />
