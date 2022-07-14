@@ -4,20 +4,26 @@ import {
   Button,
   Card,
   Center,
-  Chip,
-  Chips,
   Grid,
   Group,
   Image,
   Text,
+  useMantineTheme,
 } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Fragment } from "react";
 import downloadFile from "../utils/downloadFile";
-import { BrandFacebook, BrandLinkedin, BrandGithub } from "tabler-icons-react";
+import {
+  BrandFacebook,
+  BrandLinkedin,
+  BrandGithub,
+  Template,
+} from "tabler-icons-react";
 
 const About: NextPage = () => {
+  const { colorScheme } = useMantineTheme();
+
   return (
     <Fragment>
       <Head>
@@ -31,13 +37,15 @@ const About: NextPage = () => {
             overflow: "hidden",
           }}
         >
-          <Image src="/me.jpg" alt="Profile picture" width={100} height={100} />
+          <Image src="/me.jpg" alt="Profile picture" width={110} height={110} />
         </div>
       </Center>
 
       <div style={{ textAlign: "center", marginTop: "10px" }}>
-        <Text weight={700}>Mahadi Hasan Biplob</Text>
-        <Text weight={700} size="xs">
+        <Text weight={700} size="xl">
+          Mahadi Hasan Biplob
+        </Text>
+        <Text weight={700} size="sm">
           Software Engineer
         </Text>
         <a
@@ -46,7 +54,10 @@ const About: NextPage = () => {
           rel="noopener noreferrer"
           style={{ padding: "0px 3px" }}
         >
-          <BrandGithub size={18} color="#171515" />
+          <BrandGithub
+            size={20}
+            color={colorScheme === "dark" ? "gray" : "#171515"}
+          />
         </a>
         <a
           href="https://linkedin.com/in/mahadi-hasan-biplob-a56535161"
@@ -54,7 +65,7 @@ const About: NextPage = () => {
           rel="noopener noreferrer"
           style={{ padding: "0px 3px" }}
         >
-          <BrandLinkedin size={18} color="#0072b1" />
+          <BrandLinkedin size={20} color="#0072b1" />
         </a>
         <a
           href="https://github.com/biplobmahadi/"
@@ -62,7 +73,7 @@ const About: NextPage = () => {
           rel="noopener noreferrer"
           style={{ padding: "0px 3px" }}
         >
-          <BrandFacebook size={18} color="#4267B2" />
+          <BrandFacebook size={20} color="#4267B2" />
         </a>
         <div>
           <Text size="xs">+8801753183119 | biplob.ruet15@gmail.com</Text>
@@ -184,10 +195,32 @@ const About: NextPage = () => {
         </Card>
 
         <Card mt="md" radius="lg" shadow="sm">
-          <Chips>
-            <Chip checked>React Template</Chip>
-            <Chip checked>Vite Template</Chip>
-          </Chips>
+          <Group position="center">
+            <Button
+              leftIcon={<Template size={16} />}
+              variant="light"
+              radius="xl"
+              size="xs"
+            >
+              React Template
+            </Button>
+            <Button
+              leftIcon={<Template size={16} />}
+              variant="light"
+              radius="xl"
+              size="xs"
+            >
+              Vite Template
+            </Button>
+          </Group>
+          {/* <Chips
+            position="center"
+            multiple
+            defaultValue={["react-template", "vite-template"]}
+          >
+            <Chip value="react-template">React Template</Chip>
+            <Chip value="vite-template">Vite Template</Chip>
+          </Chips> */}
         </Card>
 
         <div style={{ height: "100%" }}>
@@ -201,7 +234,7 @@ const About: NextPage = () => {
                 <Group noWrap mb={25}>
                   <Avatar
                     src="/kaz.jpeg"
-                    size={65}
+                    size={80}
                     radius="lg"
                     sx={{ border: "1px gray solid" }}
                   />
@@ -210,7 +243,10 @@ const About: NextPage = () => {
                       Associate Software Engineer
                     </Text>
 
-                    <Text weight={700}>Kaz Software</Text>
+                    <Text weight={700}>Kaz Software </Text>
+                    <Text size="xs" color="dimmed">
+                      Aug 2021 - Present
+                    </Text>
 
                     <Group noWrap spacing={10} mt={3}>
                       <Text size="xs" color="dimmed">
@@ -223,7 +259,7 @@ const About: NextPage = () => {
                 <Group noWrap mb={25}>
                   <Avatar
                     src="/drobboo.jpeg"
-                    size={65}
+                    size={80}
                     radius="lg"
                     sx={{ border: "1px gray solid" }}
                   />
@@ -233,6 +269,9 @@ const About: NextPage = () => {
                     </Text>
 
                     <Text weight={700}>Drobboo Limited</Text>
+                    <Text size="xs" color="dimmed">
+                      Jun 2021 - Jul 2021
+                    </Text>
 
                     <Group noWrap spacing={10} mt={3}>
                       <Text size="xs" color="dimmed">
@@ -245,7 +284,7 @@ const About: NextPage = () => {
                 <Group noWrap mb={25}>
                   <Avatar
                     src="/merchant.png"
-                    size={65}
+                    size={80}
                     radius="lg"
                     sx={{ border: "1px gray solid" }}
                   />
@@ -255,6 +294,9 @@ const About: NextPage = () => {
                     </Text>
 
                     <Text weight={700}>Merchant Bay LTD</Text>
+                    <Text size="xs" color="dimmed">
+                      Apr 2020 - Sep 2020
+                    </Text>
 
                     <Group noWrap spacing={10} mt={3}>
                       <Text size="xs" color="dimmed">
@@ -275,13 +317,16 @@ const About: NextPage = () => {
                 <Group noWrap mb={25}>
                   <Avatar
                     src="/ruet.jpeg"
-                    size={50}
+                    size={65}
                     radius="lg"
                     sx={{ border: "1px gray solid" }}
                   />
                   <div>
                     <Text weight={700}>
                       Rajshahi University of Engineering & Technology
+                    </Text>
+                    <Text size="xs" color="dimmed">
+                      Feb 2016 - Mar 2021
                     </Text>
 
                     <Group noWrap spacing={10} mt={3}>
@@ -295,12 +340,15 @@ const About: NextPage = () => {
                 <Group noWrap mb={25}>
                   <Avatar
                     src="/college.png"
-                    size={50}
+                    size={65}
                     radius="lg"
                     sx={{ border: "1px gray solid" }}
                   />
                   <div>
                     <Text weight={700}>Narsingdi Model College</Text>
+                    <Text size="xs" color="dimmed">
+                      Jun 2013 - May 2015
+                    </Text>
 
                     <Group noWrap spacing={10} mt={3}>
                       <Text size="xs" color="dimmed">
@@ -313,12 +361,15 @@ const About: NextPage = () => {
                 <Group noWrap mb={25}>
                   <Avatar
                     src="/school.png"
-                    size={50}
+                    size={65}
                     radius="lg"
                     sx={{ border: "1px gray solid" }}
                   />
                   <div>
                     <Text weight={700}>Harishangan High School</Text>
+                    <Text size="xs" color="dimmed">
+                      Jan 2008 - Feb 2013
+                    </Text>
 
                     <Group noWrap spacing={10} mt={3}>
                       <Text size="xs" color="dimmed">
