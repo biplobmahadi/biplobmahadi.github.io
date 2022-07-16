@@ -8,6 +8,7 @@ import {
 import { useLocalStorage } from "@mantine/hooks";
 import Head from "next/head";
 import Layout from "../components/common/Layout";
+import NextNProgress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="My Personal App to Share Knowledge" />
         <link rel="icon" href="/main.ico" />
       </Head>
+      <NextNProgress options={{ showSpinner: false }} />
       <ColorSchemeProvider
         colorScheme={colorScheme}
         toggleColorScheme={toggleColorScheme}
