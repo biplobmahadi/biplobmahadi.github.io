@@ -85,8 +85,8 @@ export function TableOfContent({ links }: TableOfContentProps) {
   }, []);
   useEffect(() => {
     if (!hashPath) {
-      setActive("");
-      setActiveIndex(0);
+      setActive(undefined);
+      setActiveIndex(undefined);
     }
   }, [asPath, hashPath]);
 
@@ -125,7 +125,7 @@ export function TableOfContent({ links }: TableOfContentProps) {
           className={classes.indicator}
           style={{
             transform: `translateY(${
-              activeIndex && activeIndex * LINK_HEIGHT + INDICATOR_OFFSET
+              active ? activeIndex! * LINK_HEIGHT + INDICATOR_OFFSET : 0
             }px)`,
           }}
         />
