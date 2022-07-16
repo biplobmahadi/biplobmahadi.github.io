@@ -1,3 +1,4 @@
+import { Text } from "@mantine/core";
 import Head from "next/head";
 import { Fragment } from "react";
 import { AllBlogs } from "../../components/blogs";
@@ -8,7 +9,9 @@ const WelcomeToBlog = () => {
       <Head>
         <title>Welcome to my blog</title>
       </Head>
-      <h4>Welcome to my blog</h4>
+      <Text size="xl" weight={700} align="center">
+        Welcome to my blog
+      </Text>
 
       <AllBlogs />
     </Fragment>
