@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import { Prism } from "@mantine/prism";
 import { useMantineTheme } from "@mantine/core";
 import GiscusDiscussion from "../../../libs/giscus";
 import Head from "next/head";
+import CustomPrism from "../../../libs/prism";
 
 const demoCode = `import { Button } from '@mantine/core';
 
@@ -30,31 +30,16 @@ const Interceptors: NextPage = () => {
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
-      <Prism
-        sx={{ margin: "100px" }}
-        language="tsx"
-        withLineNumbers
-        colorScheme={colorScheme === "dark" ? "light" : "dark"}
-      >
-        {demoCode}
-      </Prism>
-      <Prism
-        sx={{ margin: "100px" }}
-        language="tsx"
-        withLineNumbers
-        colorScheme={colorScheme === "dark" ? "light" : "dark"}
-      >
-        {demoCode}
-      </Prism>
+      <CustomPrism code={demoCode} />
+      <CustomPrism code={demoCode} />
 
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <section id="ok2" style={{ paddingTop: "100px" }}>
         Ok 2
       </section>
-      <main style={{ margin: "50px 20px" }}>
-        <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
-      </main>
+
+      <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
     </div>
   );
 };

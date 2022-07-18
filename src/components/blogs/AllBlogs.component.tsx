@@ -1,38 +1,13 @@
 import Link from "next/link";
-import { Fragment } from "react";
+import { FC, Fragment } from "react";
 import { IBlogsDetails } from "../../interfaces/blogs";
 import UIPaths from "../../paths/uiPaths";
 import { blogsDetails } from "../../consts";
-import { Card, SimpleGrid, Text, createStyles } from "@mantine/core";
+import { Card, SimpleGrid, Text } from "@mantine/core";
+import useAllBlogsStyles from "./hook/useAllBlogsStyles";
 
-const useStyles = createStyles((theme) => ({
-  card: {
-    position: "relative",
-    cursor: "pointer",
-    overflow: "hidden",
-    transition: "transform 150ms ease, box-shadow 100ms ease",
-    padding: theme.spacing.xl,
-    paddingLeft: theme.spacing.xl * 2,
-
-    "&:hover": {
-      boxShadow: theme.shadows.md,
-      transform: "scale(1.01)",
-    },
-
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      top: 0,
-      bottom: 0,
-      left: 0,
-      width: 6,
-      backgroundImage: theme.fn.linearGradient(0, theme.colors.blue[4]),
-    },
-  },
-}));
-
-export const AllBlogs = () => {
-  const { classes } = useStyles();
+export const AllBlogs: FC = () => {
+  const { classes } = useAllBlogsStyles();
 
   return (
     <Fragment>

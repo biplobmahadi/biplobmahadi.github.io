@@ -3,3 +3,7 @@ export interface ITableOfContent {
   link: string;
   order: number;
 }
+
+export interface ITableOfContentProps {
+  links: ITableOfContent[];
+}
