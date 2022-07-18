@@ -5,10 +5,11 @@ import GiscusDiscussion from "../../libs/giscus";
 
 const Welcome = () => {
   const { colorScheme } = useMantineTheme();
+
   return (
     <Fragment>
       <Head>
-        <title>Welcome to Doc</title>
+        <title>Welcome to Docs</title>
       </Head>
       <div>
         Welcome
