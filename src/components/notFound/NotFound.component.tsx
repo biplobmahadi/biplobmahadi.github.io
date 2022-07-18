@@ -1,9 +1,10 @@
 import { Title, Text, Button, Container, Group } from "@mantine/core";
 import { useRouter } from "next/router";
+import { FC } from "react";
 import UIPaths from "../../paths/uiPaths";
 import useNotFoundStyles from "./hook/useNotFoundStyles";
 
-export const NotFound = () => {
+export const NotFound: FC = () => {
   const { classes } = useNotFoundStyles();
   const router = useRouter();
 
