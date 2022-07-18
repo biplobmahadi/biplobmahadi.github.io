@@ -1,9 +1,10 @@
 import { useMantineTheme } from "@mantine/core";
+import { NextPage } from "next";
 import Head from "next/head";
 import { Fragment } from "react";
 import GiscusDiscussion from "../../libs/giscus";
 
-const HelloWorld1 = () => {
+const HelloWorld1: NextPage = () => {
   const { colorScheme } = useMantineTheme();
   return (
     <Fragment>
