@@ -21,7 +21,7 @@ const useAllBlogsStyles = createStyles((theme) => ({
       bottom: 0,
       left: 0,
       width: 6,
-      backgroundImage: theme.fn.linearGradient(0, theme.colors.blue[5]),
+      backgroundImage: theme.fn.linearGradient(0, theme.colors.blue[6]),
     },
   },
 }));

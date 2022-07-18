@@ -1,55 +1,18 @@
-import {
-  createStyles,
-  Header,
-  Group,
-  Container,
-  Burger,
-  Text,
-  Button,
-} from "@mantine/core";
+import { Header, Group, Container, Burger, Text, Button } from "@mantine/core";
 import DarkmodeSwitch from "./DarkmodeSwitch";
 import { useRouter } from "next/router";
-import UIPaths from "../../paths/uiPaths";
+import UIPaths from "../paths/uiPaths";
+import useHeaderStyles from "./hooks/useHeaderStyles";
+import { FC } from "react";
+import { ICustomHeaderProps } from "../interfaces/layout";
 
-const useStyles = createStyles((theme) => ({
-  inner: {
-    [theme.fn.smallerThan("sm")]: {
-      justifyContent: "flex-start",
-    },
-  },
-  links: {
-    [theme.fn.smallerThan("sm")]: {
-      display: "none",
-    },
-  },
-  social: {
-    [theme.fn.smallerThan("sm")]: {
-      width: "auto",
-      marginLeft: "auto",
-    },
-  },
-  burger: {
-    marginRight: theme.spacing.md,
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
-    },
-  },
-}));
-
-interface CustomHeaderProps {
-  opened: boolean;
-  setOpened: Function;
-  setActive: Function;
-  setTableOfContent: Function;
-}
-
-const CustomHeader = ({
+const CustomHeader: FC<ICustomHeaderProps> = ({
   opened,
   setOpened,
   setActive,
   setTableOfContent,
-}: CustomHeaderProps) => {
-  const { classes } = useStyles();
+}) => {
+  const { classes } = useHeaderStyles();
   const router = useRouter();
 
   return (
