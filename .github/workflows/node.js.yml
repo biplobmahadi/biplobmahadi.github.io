@@ -26,6 +26,12 @@ jobs:
     - run: npm run build
     - run: npm run export
     - run: touch ./out/.nojekyll
+      env:
+          NEXT_PUBLIC_REPO_USERNAME: ${{ secrets.NEXT_PUBLIC_REPO_USERNAME }}
+          NEXT_PUBLIC_REPO_NAME: ${{ secrets.NEXT_PUBLIC_REPO_NAME }}
+          NEXT_PUBLIC_REPO_ID: ${{ secrets.NEXT_PUBLIC_REPO_ID }}
+          NEXT_PUBLIC_CATEGORY_ID: ${{ secrets.NEXT_PUBLIC_CATEGORY_ID }}
+
         
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4.3.3
