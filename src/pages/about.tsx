@@ -68,7 +68,7 @@ const About: NextPage = () => {
           <BrandLinkedin size={20} color="#0072b1" />
         </a>
         <a
-          href="https://github.com/biplobmahadi/"
+          href="https://facebook.com/profile.php?id=100014558505131"
           target="_blank"
           rel="noopener noreferrer"
           style={{ padding: "0px 3px" }}
