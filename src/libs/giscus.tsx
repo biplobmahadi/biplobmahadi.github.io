@@ -3,20 +3,15 @@ import Giscus from "@giscus/react";
 import { IGiscusDiscussion } from "../interfaces/libs/giscus.interface";
 
 const GiscusDiscussion: FC<IGiscusDiscussion> = ({ theme }) => {
-  const repoUsername = process.env.NEXT_PUBLIC_REPO_USERNAME!;
-  const repoName = process.env.NEXT_PUBLIC_REPO_NAME!;
-  const repoId = process.env.NEXT_PUBLIC_REPO_ID!;
-  const categoryId = process.env.NEXT_PUBLIC_CATEGORY_ID!;
-
   return (
     <Giscus
       id="comments"
-      repo={`${repoUsername}/${repoName}`}
-      repoId={repoId}
+      repo="biplobmahadi/biplobmahadi.github.io"
+      repoId="R_kgDOHkgVOA"
       category="Comments"
-      categoryId={categoryId}
+      categoryId="DIC_kwDOHkgVOM4CQGH7"
       mapping="url"
-      term="Welcome to @giscus/react component!"
+      term="Welcome!"
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
