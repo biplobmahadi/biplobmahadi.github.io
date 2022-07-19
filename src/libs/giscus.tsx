@@ -3,10 +3,10 @@ import Giscus from "@giscus/react";
 import { IGiscusDiscussion } from "../interfaces/libs/giscus.interface";
 
 const GiscusDiscussion: FC<IGiscusDiscussion> = ({ theme }) => {
-  const githubUsername = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
-  const githubRepoName = process.env.NEXT_PUBLIC_GITHUB_REPO_NAME;
-  const githubRepoId = process.env.NEXT_PUBLIC_GITHUB_REPO_ID;
-  const githubCategoryId = process.env.NEXT_PUBLIC_GITHUB_CATEGORY_ID;
+  const githubUsername = process.env.NEXT_PUBLIC_REPO_USERNAME;
+  const githubRepoName = process.env.NEXT_PUBLIC_REPO_NAME;
+  const githubRepoId = process.env.NEXT_PUBLIC_REPO_ID;
+  const githubCategoryId = process.env.NEXT_PUBLIC_CATEGORY_ID;
 
   return (
     <Giscus
