@@ -24,6 +24,11 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run build
+      env:
+        NEXT_PUBLIC_REPO_USERNAME: ${{ secrets.NEXT_PUBLIC_REPO_USERNAME }}
+        NEXT_PUBLIC_REPO_NAME: ${{ secrets.NEXT_PUBLIC_REPO_NAME }}
+        NEXT_PUBLIC_REPO_ID: ${{ secrets.NEXT_PUBLIC_REPO_ID }}
+        NEXT_PUBLIC_CATEGORY_ID: ${{ secrets.NEXT_PUBLIC_CATEGORY_ID }}
     - run: npm run export
     - run: touch ./out/.nojekyll
     
