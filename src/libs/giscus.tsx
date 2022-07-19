@@ -10,7 +10,7 @@ const GiscusDiscussion: FC<IGiscusDiscussion> = ({ theme }) => {
       repoId="R_kgDOHkgVOA"
       category="Comments"
       categoryId="DIC_kwDOHkgVOM4CQGH7"
-      mapping="url"
+      mapping="title"
       term="Welcome!"
       reactionsEnabled="1"
       emitMetadata="0"
