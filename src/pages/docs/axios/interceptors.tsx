@@ -30,8 +30,8 @@ const Interceptors: NextPage = () => {
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
-      <CustomPrism code={demoCode} />
-      <CustomPrism code={demoCode} />
+      <CustomPrism code={demoCode} language="typescript" />
+      <CustomPrism code={demoCode} language="typescript" />
 
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
       <main style={{ marginTop: "100px" }}>Hello Man!</main>
