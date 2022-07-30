@@ -22,11 +22,17 @@ const FakeJsonServer: NextPage = () => {
       <Head>
         <title>Fake Json Server</title>
       </Head>
-      <Text mb={50} size="xl" weight={700} align="center">
+      <Text mb={30} size="xl" weight={700} align="center">
         Fake Json Server
       </Text>
+      <section>
+        <Text size="xs" color="dimmed">
+          Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+        </Text>
+      </section>
+
       <main>
-        <Text size="sm" mb={20}>
+        <Text size="sm" my={20}>
           As a frontend engineer we always need data as <b>REST</b> or{" "}
           <b>GraphQL</b> or <b>gRPC</b> API from a backend server . But
           it&apos;s time consuming to create a backend service to practice our
