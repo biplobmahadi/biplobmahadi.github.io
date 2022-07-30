@@ -1,6 +1,8 @@
 import { useMantineTheme, Text, Card, Code, Anchor } from "@mantine/core";
 import { NextPage } from "next";
 import Head from "next/head";
+import useBlogsStyles from "../../../helpers/useBlogsStyles";
+import useNoteCardStyles from "../../../helpers/useNoteCardStyles";
 import {
   dbCode,
   packageJson,
@@ -10,10 +12,13 @@ import {
 import GiscusDiscussion from "../../libs/giscus";
 import CustomPrism from "../../libs/prism";
 
-const HelloWorld1: NextPage = () => {
+const FakeJsonServer: NextPage = () => {
   const { colorScheme } = useMantineTheme();
+  const { classes } = useBlogsStyles();
+  const { classes: cardClasses } = useNoteCardStyles();
+
   return (
-    <div style={{ margin: "3% 15%" }}>
+    <div className={classes.containerClass}>
       <Head>
         <title>Fake Json Server</title>
       </Head>
@@ -39,7 +44,7 @@ const HelloWorld1: NextPage = () => {
           to practice frontend things.
         </Text>
         <Text size="sm" mb={20}>
-          We can make <b>GET</b>, <b>POST</b>, <b>PUT</b>, <b>PATCH</b> or{" "}
+          We can make <b>GET</b>, <b>POST</b>, <b>PUT</b>, <b>PATCH</b> and{" "}
           <b>DELETE</b> requests, changes will be automatically and safely saved
           to db.json using lowdb.
         </Text>
@@ -59,21 +64,53 @@ const HelloWorld1: NextPage = () => {
           <Code color="blue">json-server --watch db.json --port 4000</Code>
         </Text>
         <Text size="sm" weight={700}>
-          Requests:
+          JSON Server provides all request:
         </Text>
-        <div style={{ padding: "2% 5%" }}>
-          <Text size="sm">GET /posts</Text>
-          <Text size="sm">GET /posts/1</Text>
-          <Text size="sm">POST /posts</Text>
-          <Text size="sm">PUT /posts/1</Text>
-          <Text size="sm">PATCH /posts/1</Text>
-          <Text size="sm">DELETE /posts/1</Text>
+
+        <div style={{ padding: "1% 5%" }}>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>GET</b> /posts
+          </Text>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>GET</b> /posts/1
+          </Text>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>POST</b> /posts
+          </Text>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>PUT</b> /posts/1
+          </Text>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>PATCH</b> /posts/1
+          </Text>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>DELETE</b> /posts/1
+          </Text>
         </div>
-        <Text size="sm">Filter /posts?title=json-server&author=typicode</Text>
-        <Text size="sm">Sort /posts?_sort=author&_order=asc or desc</Text>
-        <Text size="sm">Pagination /posts?_page=1&_limit=10</Text>
-        <Text size="sm">Search /posts?q=axios</Text>
-        <Card my="lg" radius="lg" shadow="sm">
+
+        <Text size="sm" mt={10}>
+          Request with <b>Filter</b>, <b>Sort</b>, <b>Search</b>,{" "}
+          <b>Pagination</b>:
+        </Text>
+        <div style={{ padding: "1% 5%" }}>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>Filter</b>{" "}
+            /posts?title=json-server&author=typicode
+          </Text>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>Sort</b>{" "}
+            /posts?_sort=author&_order=asc or desc
+          </Text>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>Pagination</b>{" "}
+            /posts?_page=1&_limit=10
+          </Text>
+          <Text size="sm">
+            <b style={{ paddingRight: "1%" }}>Search</b> /posts?q=axios
+          </Text>
+        </div>
+
+        <Card className={cardClasses.noteCard} my="lg" radius="lg" shadow="sm">
           <Text size="sm" mb={10}>
             We can achieve everything using{" "}
             <Anchor
@@ -94,6 +131,7 @@ const HelloWorld1: NextPage = () => {
             Here we have /db, using /db data will persist for a single session.
           </Text>
         </Card>
+
         <Text size="sm" my={20}>
           We can also create our own{" "}
           <Anchor
@@ -124,25 +162,25 @@ const HelloWorld1: NextPage = () => {
         </Text>
 
         <Text size="sm" mt={20} mb={5}>
-          Create a npm project using <Code color="blue">npm init -y</Code>
+          Create a node project using <Code color="blue">npm init -y</Code>
         </Text>
-        <Text size="sm" mb={5}>
-          Install: <Code color="blue">npm install json-server</Code>
+        <Text size="sm" mb={20}>
+          Install JSON Server: <Code color="blue">npm install json-server</Code>
         </Text>
-        <Text size="sm" mb={5}>
+        <Text size="sm">
           Create <b>server.js</b>
         </Text>
         <CustomPrism code={serverCode} language="javascript" />
-        <Text size="sm" mb={5}>
+        <Text size="sm" mt={20}>
           Create <b>db.json</b>
         </Text>
         <CustomPrism code={dbCode} language="json" />
-        <Text size="sm" mb={5}>
-          Update script on <b>package.json</b>
+        <Text size="sm" mt={20}>
+          Update scripts on <b>package.json</b>
         </Text>
         <CustomPrism code={packageJson} language="json" />
-        <Text size="sm" mb={5}>
-          Run: <Code color="blue">npm start</Code>
+        <Text size="sm" mt={20}>
+          Run node project: <Code color="blue">npm start</Code>
         </Text>
         <Text size="sm" my={20}>
           Documentation of JSON Server is well written.{" "}
@@ -160,4 +198,4 @@ const HelloWorld1: NextPage = () => {
   );
 };
 
-export default HelloWorld1;
+export default FakeJsonServer;
