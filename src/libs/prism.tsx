@@ -8,10 +8,10 @@ const CustomPrism: FC<ICustomPrism> = ({ code, language }) => {
 
   return (
     <Prism
-      sx={{ margin: "1% 0" }}
+      sx={{ margin: "1% 0", border: "1px gray solid", borderRadius: "6px" }}
       language={language}
       withLineNumbers
-      colorScheme={colorScheme === "dark" ? "light" : "dark"}
+      colorScheme={colorScheme === "dark" ? "dark" : "light"}
     >
       {code}
     </Prism>
