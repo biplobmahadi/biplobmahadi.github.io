@@ -18,13 +18,13 @@ export const navbarData = [
         tableOfContent: axiosInstancesTOC,
       },
       {
-        label: "Error Handling & Aborting",
-        link: UIPaths.Docs.Axios.GetAxiosDoc("error-handling-and-aborting"),
+        label: "Promise Handling & Aborting",
+        link: UIPaths.Docs.Axios.GetAxiosDoc("promise-handling-and-aborting"),
         // tableOfContent: axiosInstancesTOC,
       },
       {
-        label: "Request Hooks",
-        link: UIPaths.Docs.Axios.GetAxiosDoc("request-hooks"),
+        label: "Custom Hooks",
+        link: UIPaths.Docs.Axios.GetAxiosDoc("custom-hooks"),
         // tableOfContent: axiosInstancesTOC,
       },
       {
