@@ -8,17 +8,27 @@ import {
   demoComponentCode,
   postsInterfaceCode,
 } from "../../../consts/docs/axios";
+import useDocsStyles from "../../../../helpers/useDocsStyles";
 
 const DemoRequests: NextPage = () => {
   const { colorScheme } = useMantineTheme();
+  const { classes } = useDocsStyles();
 
   return (
     <Fragment>
       <Head>
         <title>Demo Requests - Axios for React</title>
       </Head>
-      <div style={{ margin: "1%" }}>
-        <Text size="sm" mb={20}>
+      <div className={classes.containerClass}>
+        <Text size="xl" weight={700} mb={30} align="center">
+          Demo Requests with React Component
+        </Text>
+        <section>
+          <Text size="xs" color="dimmed">
+            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+          </Text>
+        </section>
+        <Text size="sm" my={20}>
           We will use{" "}
           <Anchor href="https://jsonplaceholder.typicode.com/" target="_blank">
             JSON Placeholder
@@ -32,18 +42,20 @@ const DemoRequests: NextPage = () => {
           related folders.
         </Text>
 
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           Now create <b>components/DemoComponent.tsx</b>
         </Text>
         <CustomPrism code={demoComponentCode} language="tsx" />
 
-        <Text size="sm" mb={20}>
+        <Text size="sm" mt={20}>
           Create <b>interfaces/posts.tsx</b> for posts interfaces outside the
           components folder
         </Text>
         <CustomPrism code={postsInterfaceCode} language="typescript" />
 
-        <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        <div style={{ marginTop: "20px" }}>
+          <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        </div>
       </div>
     </Fragment>
   );

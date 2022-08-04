@@ -24,8 +24,16 @@ const Interceptors: NextPage = () => {
       <Head>
         <title>Interceptors - Axios for React</title>
       </Head>
-      <div style={{ margin: "1%" }}>
-        <Text size="sm" mb={20}>
+      <div style={{ margin: "2% 1%" }}>
+        <Text size="xl" weight={700} mb={30} align="center">
+          Axios Interceptors
+        </Text>
+        <section>
+          <Text size="xs" color="dimmed">
+            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+          </Text>
+        </section>
+        <Text size="sm" my={20}>
           Using axios interceptor we can intercept requests or responses before
           they are handled. There are 2 types of interceptor. One is a request
           interceptor and another is a response interceptor.
@@ -42,7 +50,7 @@ const Interceptors: NextPage = () => {
         <Text size="sm" mb={20}>
           We have our private hook.
         </Text>
-        <Text size="sm" mb={20} weight={700}>
+        <Text size="sm" weight={700}>
           hooks/usePrivateAxios.ts
         </Text>
         <CustomPrism
@@ -50,12 +58,12 @@ const Interceptors: NextPage = () => {
           language="typescript"
         />
 
-        <Text size="sm" mb={20}>
+        <Text size="sm" mb={30} mt={20}>
           Now, we will add a request and response interceptor with our private
           interceptor in this private hook.
         </Text>
 
-        <Text weight={700} mb={20}>
+        <Text id="requestInterceptor" weight={700} mb={20}>
           Request interceptor
         </Text>
         <Text size="sm" mb={20}>
@@ -68,12 +76,12 @@ const Interceptors: NextPage = () => {
             persistent memory <b>(localhost)</b> or app memory <b>(state)</b>.
           </Text>
         </Card>
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           Create <b>interceptors/requestInterceptor.ts</b>
         </Text>
         <CustomPrism code={requestInterceptorCode} language="typescript" />
 
-        <Text weight={700} mb={20}>
+        <Text id="responseInterceptor" weight={700} mt={30} mb={20}>
           Response interceptor
         </Text>
         <Text size="sm" mb={20}>
@@ -95,11 +103,11 @@ const Interceptors: NextPage = () => {
           Before creating a response interceptor, let’s create a hook for
           refresh API path.
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           Create <b>hooks/useRefreshToken.ts</b>
         </Text>
         <CustomPrism code={useRefreshTokenCode} language="typescript" />
-        <Text size="sm" mb={20}>
+        <Text size="sm" mt={20}>
           Now create <b>interceptors/responseInterceptor.ts</b>
         </Text>
         <CustomPrism code={responsetInterceptorCode} language="typescript" />
@@ -115,7 +123,7 @@ const Interceptors: NextPage = () => {
           </Text>
         </Card>
 
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           The complete <b>interceptors/responseInterceptor.ts</b>
         </Text>
         <CustomPrism
@@ -123,7 +131,7 @@ const Interceptors: NextPage = () => {
           language="typescript"
         />
 
-        <Text size="sm" mb={20}>
+        <Text size="sm" mt={20}>
           For interface, create <b>interfaces/customAxiosRequestConfig.ts</b>
         </Text>
         <CustomPrism
@@ -131,19 +139,21 @@ const Interceptors: NextPage = () => {
           language="typescript"
         />
 
-        <Text weight={700} mb={20}>
+        <Text id="addingInterceptors" weight={700} mt={30} mb={20}>
           Adding interceptors with private hook
         </Text>
         <Text size="sm" mb={20}>
           We will remove interceptors when this hook will unmount from any
           component to avoid memory leak.
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           Here the complete <b>hooks/usePrivateAxios.ts</b>
         </Text>
         <CustomPrism code={usePrivateAxiosCodeUpdated} language="typescript" />
 
-        <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        <div style={{ marginTop: "20px" }}>
+          <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        </div>
       </div>
     </div>
   );

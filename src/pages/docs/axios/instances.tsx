@@ -18,8 +18,16 @@ const Instances: NextPage = () => {
       <Head>
         <title>Instances - Axios for React</title>
       </Head>
-      <div style={{ margin: "1%" }}>
-        <Text size="sm" mb={20}>
+      <div style={{ margin: "2% 1%" }}>
+        <Text size="xl" weight={700} mb={30} align="center">
+          Axios Instances
+        </Text>
+        <section>
+          <Text size="xs" color="dimmed">
+            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+          </Text>
+        </section>
+        <Text size="sm" my={20}>
           We can create a new instance of axios with a custom config.
         </Text>
         <Text size="sm" mb={20}>
@@ -33,30 +41,31 @@ const Instances: NextPage = () => {
           header. So we need 2 different instances to request with the
           authorization header and without.
         </Text>
-
-        <Text weight={700} mb={20}>
+        <Text weight={700} mb={10}>
           Public Instance
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           Create <b>instances/publicInstance.ts</b>
         </Text>
         <CustomPrism code={publicInstanceCode} language="typescript" />
 
-        <Text weight={700} mb={20}>
+        <Text id="privateInstance" weight={700} mb={10} mt={30}>
           Private Instance
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           Create <b>instances/privateInstance.ts</b>
         </Text>
         <CustomPrism code={privateInstanceCode} language="typescript" />
 
-        <Text size="sm" mb={20}>
+        <Text size="sm" mt={20}>
           Create a <b>instances/index.ts</b> file to export everything from{" "}
           <b>instances</b> folder
         </Text>
         <CustomPrism code={indexCode} language="typescript" />
 
-        <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        <div style={{ marginTop: "20px" }}>
+          <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        </div>
       </div>
     </Fragment>
   );

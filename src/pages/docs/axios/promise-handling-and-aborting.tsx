@@ -19,14 +19,22 @@ const PromiseHandlingAndAborting: NextPage = () => {
       <Head>
         <title>Promise Handling & Aborting - Axios for React</title>
       </Head>
-      <div style={{ margin: "1%" }}>
-        <Text size="sm" mb={20}>
+      <div style={{ margin: "2% 1%" }}>
+        <Text size="xl" weight={700} mb={30} align="center">
+          Promise Handling & Aborting
+        </Text>
+        <section>
+          <Text size="xs" color="dimmed">
+            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+          </Text>
+        </section>
+        <Text size="sm" my={20}>
           We know axios is a promise based library. We always need to handle
           those promises in every request. Here we will create a system to reuse
           this every time.
         </Text>
         <Text size="sm" mb={20}>
-          Here we are using 2 instances. Now we need to create all requests
+          Here we are using 2 instances. Now we need to create all requests{" "}
           <b>(GET, POST, PUT, PATCH, DELETE)</b> which both instances can use
           and here the promises need to be handled.
         </Text>
@@ -37,20 +45,20 @@ const PromiseHandlingAndAborting: NextPage = () => {
           promises. It will also be great for adding abort or cancellation in
           only one place and every request will use this abort or cancellation.
         </Text>
-        <Text weight={700} mb={20}>
+        <Text id="promiseHandling" weight={700} mb={10}>
           Promise handling
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           Create <b>helpers/request.ts</b>
         </Text>
         <CustomPrism code={requestCode} language="typescript" />
 
-        <Text size="sm" mb={20}>
+        <Text size="sm" mt={20}>
           For interface, create <b>interfaces/abortOption.ts</b>
         </Text>
         <CustomPrism code={abortOptionInterfaceCode} language="typescript" />
 
-        <Text weight={700} mb={20}>
+        <Text id="aborting" weight={700} mb={10} mt={30}>
           Aborting
         </Text>
         <Text size="sm" mb={20}>
@@ -71,24 +79,26 @@ const PromiseHandlingAndAborting: NextPage = () => {
           rejected and again that same request occurs then the previous one will
           cancel and the latest request will resolve or reject.
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           Adding abort functionality with <b>helpers/request.ts</b>
         </Text>
         <CustomPrism code={requestWithAbortCode} language="typescript" />
 
-        <Text weight={700} mb={20}>
+        <Text id="necessaryRequests" weight={700} mb={10} mt={30}>
           Necessary requests
         </Text>
         <Text size="sm" mb={20}>
           We have 2 instances and we want to create all requests{" "}
           <b>(GET, POST, PUT, PATCH, DELETE)</b> which both instances can use.
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm">
           Create <b>helpers/axiosRequests.ts</b>
         </Text>
         <CustomPrism code={axiosRequestsCode} language="typescript" />
 
-        <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        <div style={{ marginTop: "20px" }}>
+          <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        </div>
       </div>
     </Fragment>
   );

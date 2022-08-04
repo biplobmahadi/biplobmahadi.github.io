@@ -3,17 +3,27 @@ import Head from "next/head";
 import React, { Fragment } from "react";
 import { Anchor, Text, useMantineTheme } from "@mantine/core";
 import GiscusDiscussion from "../../../libs/giscus";
+import useDocsStyles from "../../../../helpers/useDocsStyles";
 
 const Introduction: NextPage = () => {
   const { colorScheme } = useMantineTheme();
+  const { classes } = useDocsStyles();
 
   return (
     <Fragment>
       <Head>
         <title>Introduction - Axios for React</title>
       </Head>
-      <div style={{ margin: "1%" }}>
-        <Text size="sm" mb={20}>
+      <div className={classes.containerClass}>
+        <Text size="xl" weight={700} mb={30} align="center">
+          Introduction to Axios
+        </Text>
+        <section>
+          <Text size="xs" color="dimmed">
+            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+          </Text>
+        </section>
+        <Text size="sm" my={20}>
           Axios is a promise based HTTP Client for node and the browser. We will
           use it for the browser here.
         </Text>
