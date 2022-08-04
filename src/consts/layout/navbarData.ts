@@ -1,6 +1,10 @@
 import { CalendarStats, Notes } from "tabler-icons-react";
 import UIPaths from "../../paths/uiPaths";
-import { axiosInstancesTOC, axiosInterceptorsTOC } from "../tableOfContent";
+import {
+  axiosInstancesTOC,
+  axiosInterceptorsTOC,
+  axiosPromiseHandlingTOC,
+} from "../tableOfContent";
 
 export const navbarData = [
   {
@@ -10,7 +14,6 @@ export const navbarData = [
       {
         label: "Introduction",
         link: UIPaths.Docs.Axios.GetAxiosDoc("introduction"),
-        // tableOfContent: axiosInterceptorsTOC,
       },
       {
         label: "Instances",
@@ -20,12 +23,11 @@ export const navbarData = [
       {
         label: "Promise Handling & Aborting",
         link: UIPaths.Docs.Axios.GetAxiosDoc("promise-handling-and-aborting"),
-        // tableOfContent: axiosInstancesTOC,
+        tableOfContent: axiosPromiseHandlingTOC,
       },
       {
         label: "Custom Hooks",
         link: UIPaths.Docs.Axios.GetAxiosDoc("custom-hooks"),
-        // tableOfContent: axiosInstancesTOC,
       },
       {
         label: "Interceptors",
@@ -35,7 +37,6 @@ export const navbarData = [
       {
         label: "Demo Requests",
         link: UIPaths.Docs.Axios.GetAxiosDoc("demo-requests"),
-        // tableOfContent: axiosInstancesTOC,
       },
     ],
   },
