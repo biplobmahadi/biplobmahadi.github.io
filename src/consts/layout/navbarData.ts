@@ -1,4 +1,4 @@
-import { CalendarStats, Notes } from "tabler-icons-react";
+import { BrandReactNative, Notes } from "tabler-icons-react";
 import UIPaths from "../../paths/uiPaths";
 import {
   axiosInstancesTOC,
@@ -9,7 +9,7 @@ import {
 export const navbarData = [
   {
     label: "Axios for React",
-    icon: Notes,
+    icon: BrandReactNative,
     links: [
       {
         label: "Introduction",
@@ -41,13 +41,54 @@ export const navbarData = [
     ],
   },
   {
+    label: "React Query",
+    icon: BrandReactNative,
+    links: [
+      {
+        label: "Introduction",
+        link: UIPaths.Docs.ReactQuery.GetReactQueryDoc("introduction"),
+      },
+      {
+        label: "Update Axios Setup",
+        link: UIPaths.Docs.ReactQuery.GetReactQueryDoc("update-axios-setup"),
+      },
+      {
+        label: "Query Hook",
+        link: UIPaths.Docs.ReactQuery.GetReactQueryDoc("query-hook"),
+      },
+      {
+        label: "Mutation Hooks",
+        link: UIPaths.Docs.ReactQuery.GetReactQueryDoc("mutation-hooks"),
+      },
+      {
+        label: "Demo Requests",
+        link: UIPaths.Docs.ReactQuery.GetReactQueryDoc("demo-requests"),
+      },
+    ],
+  },
+  {
     label: "React Router",
-    icon: CalendarStats,
+    icon: BrandReactNative,
     links: [
       {
         label: "Role Based Routing",
         link: UIPaths.Docs.ReactRouter.GetReactRouterDoc("role-base-routing"),
       },
     ],
+  },
+  {
+    label: "React Context",
+    icon: BrandReactNative,
+    links: [],
+  },
+  {
+    label: "TypeScript",
+    icon: Notes,
+    links: [],
+  },
+  {
+    label: "Nginx",
+    icon: Notes,
+    links: [],
   },
 ];

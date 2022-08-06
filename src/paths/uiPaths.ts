@@ -14,6 +14,11 @@ const UIPaths = {
         return `/docs/axios/${slug}`;
       },
     },
+    ReactQuery: {
+      GetReactQueryDoc: (slug: string) => {
+        return `/docs/react-query/${slug}`;
+      },
+    },
     ReactRouter: {
       GetReactRouterDoc: (slug: string) => {
         return `/docs/react-router/${slug}`;
