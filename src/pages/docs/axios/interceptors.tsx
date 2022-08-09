@@ -151,6 +151,11 @@ const Interceptors: NextPage = () => {
         </Text>
         <CustomPrism code={usePrivateAxiosCodeUpdated} language="typescript" />
 
+        <Text size="sm" mt={20}>
+          Finally, we will move all axios related folders to the{" "}
+          <b>libs/axios</b> folder.
+        </Text>
+
         <div style={{ marginTop: "20px" }}>
           <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
         </div>

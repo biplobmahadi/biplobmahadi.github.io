@@ -53,11 +53,6 @@ const PromiseHandlingAndAborting: NextPage = () => {
         </Text>
         <CustomPrism code={requestCode} language="typescript" />
 
-        <Text size="sm" mt={20}>
-          For interface, create <b>interfaces/abortOption.ts</b>
-        </Text>
-        <CustomPrism code={abortOptionInterfaceCode} language="typescript" />
-
         <Text id="aborting" weight={700} mb={10} mt={30}>
           Aborting
         </Text>
@@ -83,6 +78,11 @@ const PromiseHandlingAndAborting: NextPage = () => {
           Adding abort functionality with <b>helpers/request.ts</b>
         </Text>
         <CustomPrism code={requestWithAbortCode} language="typescript" />
+
+        <Text size="sm" mt={20}>
+          For interface, create <b>interfaces/abortOption.ts</b>
+        </Text>
+        <CustomPrism code={abortOptionInterfaceCode} language="typescript" />
 
         <Text id="necessaryRequests" weight={700} mb={10} mt={30}>
           Necessary requests
