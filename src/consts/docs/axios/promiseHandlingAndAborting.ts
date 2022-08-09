@@ -60,8 +60,8 @@ const request = async <R, D = any>(
 export default request;`;
 
 export const abortOptionInterfaceCode = `export interface IAbortOption {
-    activateAbort: boolean;
-  }`;
+  activateAbort: boolean;
+}`;
 
 export const axiosRequestsCode = `import { AxiosInstance, AxiosRequestConfig } from "axios";
 import { IAbortOption } from "../interfaces/abortOption";

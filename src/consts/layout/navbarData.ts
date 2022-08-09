@@ -4,6 +4,8 @@ import {
   axiosInstancesTOC,
   axiosInterceptorsTOC,
   axiosPromiseHandlingTOC,
+  reactQueryIntroductionTOC,
+  reactQueryMutationHooksTOC,
 } from "../tableOfContent";
 
 export const navbarData = [
@@ -47,6 +49,7 @@ export const navbarData = [
       {
         label: "Introduction",
         link: UIPaths.Docs.ReactQuery.GetReactQueryDoc("introduction"),
+        tableOfContent: reactQueryIntroductionTOC,
       },
       {
         label: "Update Axios Setup",
@@ -59,6 +62,7 @@ export const navbarData = [
       {
         label: "Mutation Hooks",
         link: UIPaths.Docs.ReactQuery.GetReactQueryDoc("mutation-hooks"),
+        tableOfContent: reactQueryMutationHooksTOC,
       },
       {
         label: "Demo Requests",
