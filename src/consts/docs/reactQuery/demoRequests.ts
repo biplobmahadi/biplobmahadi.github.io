@@ -62,7 +62,7 @@ import { ITodo } from "../interfaces/todo";
 export const usePutTodo = () => {
   const { mutate } = usePutMutation<ITodo, ITodo>(
     {
-      pathFn: (id) => ${`https://jsonplaceholder.typicode.com/todos/{id}`},
+      pathFn: (id) => \`https://jsonplaceholder.typicode.com/todos/${"$"}{id}\`,
       isPrivate: false,
     },
     { onSuccess: () => console.log("Success") }
@@ -76,7 +76,7 @@ import { ITodo } from "../interfaces/todo";
 export const useDeleteTodo = () => {
   const { mutate } = useDeleteMutation(
     {
-      pathFn: (id) => ${`https://jsonplaceholder.typicode.com/todos/{id}`},
+      pathFn: (id) => \`https://jsonplaceholder.typicode.com/todos/${"$"}{id}\`,
       isPrivate: false,
     },
     { onSuccess: () => console.log("Success") }
