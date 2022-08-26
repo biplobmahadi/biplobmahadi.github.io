@@ -55,7 +55,7 @@ const DemoRequests: NextPage = () => {
         <CustomPrism code={providerAdd} language="tsx" />
 
         <Text size="sm" mt={20}>
-          Now, let's create API hooks to handle all requests.
+          Now, let&apos;s create API hooks to handle all requests.
         </Text>
         <Text size="sm" mt={10}>
           Create <b>api/todo/useGetTodos.ts</b>
