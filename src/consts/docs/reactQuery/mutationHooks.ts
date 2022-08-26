@@ -10,7 +10,7 @@ export interface IPutPatchDelMutationConfig {
   isPrivate?: boolean;
 }`;
 
-export const postMutation = `import { AxiosError } from "axios";
+export const postMutation = `import { AxiosError, AxiosRequestConfig } from "axios";
 import { useMutation, UseMutationOptions } from "react-query";
 import { IPostMutationConfig } from "./interfaces/mutationConfig";
 import { usePrivateAxios, usePublicAxios } from "../../axios";
@@ -20,7 +20,8 @@ export const usePostMutation = <TResponse, TVariables>(
   options?: Omit<
     UseMutationOptions<TResponse, AxiosError, TVariables>,
     "mutationFn"
-  >
+  >,
+  axiosRequestConfig?: AxiosRequestConfig
 ) => {
   const { path, enableAbort = true, isPrivate = true } = config;
   const { publicPost } = usePublicAxios();
@@ -28,16 +29,25 @@ export const usePostMutation = <TResponse, TVariables>(
 
   const mutationFn = (variables: TVariables) => {
     if (isPrivate) {
-      return privatePost<TResponse, TVariables>(path, variables, { activateAbort: enableAbort });
+      return privatePost<TResponse, TVariables>(
+        path,
+        variables,
+        { activateAbort: enableAbort },
+        axiosRequestConfig
+      );
     }
-    return publicPost<TResponse, TVariables>(path, variables, { activateAbort: enableAbort });
+    return publicPost<TResponse, TVariables>(
+      path,
+      variables,
+      { activateAbort: enableAbort },
+      axiosRequestConfig
+    );
   };
 
   return useMutation<TResponse, AxiosError, TVariables>(mutationFn, options);
-};
-`;
+};`;
 
-export const putMutation = `import { AxiosError } from "axios";
+export const putMutation = `import { AxiosError, AxiosRequestConfig } from "axios";
 import { useMutation, UseMutationOptions } from "react-query";
 import { IPutPatchDelMutationConfig } from "./interfaces/reactQuery";
 import { usePrivateAxios, usePublicAxios } from "../../axios";
@@ -47,7 +57,8 @@ export const usePutMutation = <TResponse, TVariables extends { id: number }>(
   options?: Omit<
     UseMutationOptions<TResponse, AxiosError, TVariables>,
     "mutationFn"
-  >
+  >,
+  axiosRequestConfig?: AxiosRequestConfig
 ) => {
   const { pathFn, enableAbort = true, isPrivate = true } = config;
   const { publicPut } = usePublicAxios();
@@ -55,15 +66,25 @@ export const usePutMutation = <TResponse, TVariables extends { id: number }>(
 
   const mutationFn = ({ id, ...rest }: TVariables) => {
     if (isPrivate) {
-      return privatePut<TResponse, Omit<TVariables, "id">>(pathFn(id), rest, { activateAbort: enableAbort });
+      return privatePut<TResponse, Omit<TVariables, "id">>(
+        pathFn(id),
+        rest,
+        { activateAbort: enableAbort },
+        axiosRequestConfig
+      );
     }
-    return publicPut<TResponse, Omit<TVariables, "id">>(pathFn(id), rest, { activateAbort: enableAbort });
+    return publicPut<TResponse, Omit<TVariables, "id">>(
+      pathFn(id),
+      rest,
+      { activateAbort: enableAbort },
+      axiosRequestConfig
+    );
   };
 
   return useMutation<TResponse, AxiosError, TVariables>(mutationFn, options);
 };`;
 
-export const patchMutation = `import { AxiosError } from "axios";
+export const patchMutation = `import { AxiosError, AxiosRequestConfig } from "axios";
 import { useMutation, UseMutationOptions } from "react-query";
 import { IPutPatchDelMutationConfig } from "./interfaces/reactQuery";
 import { usePrivateAxios, usePublicAxios } from "../../axios";
@@ -73,7 +94,8 @@ export const usePatchMutation = <TResponse, TVariables extends { id: number }>(
   options?: Omit<
     UseMutationOptions<TResponse, AxiosError, TVariables>,
     "mutationFn"
-  >
+  >,
+  axiosRequestConfig?: AxiosRequestConfig
 ) => {
   const { pathFn, enableAbort = true, isPrivate = true } = config;
   const { publicPatch } = usePublicAxios();
@@ -81,15 +103,25 @@ export const usePatchMutation = <TResponse, TVariables extends { id: number }>(
 
   const mutationFn = ({ id, ...rest }: TVariables) => {
     if (isPrivate) {
-      return privatePatch<TResponse, Omit<TVariables, "id">>(pathFn(id), rest, { activateAbort: enableAbort });
+      return privatePatch<TResponse, Omit<TVariables, "id">>(
+        pathFn(id),
+        rest,
+        { activateAbort: enableAbort },
+        axiosRequestConfig
+      );
     }
-    return publicPatch<TResponse, Omit<TVariables, "id">>(pathFn(id), rest, { activateAbort: enableAbort });
+    return publicPatch<TResponse, Omit<TVariables, "id">>(
+      pathFn(id),
+      rest,
+      { activateAbort: enableAbort },
+      axiosRequestConfig
+    );
   };
 
   return useMutation<TResponse, AxiosError, TVariables>(mutationFn, options);
 };`;
 
-export const deleteMutation = `import { AxiosError } from "axios";
+export const deleteMutation = `import { AxiosError, AxiosRequestConfig } from "axios";
 import { useMutation, UseMutationOptions } from "react-query";
 import { IPutDelMutationConfig } from "./interfaces/reactQuery";
 import { usePrivateAxios, usePublicAxios } from "../../axios";
@@ -99,7 +131,8 @@ export const useDeleteMutation = <TResponse, TVariables extends { id: number }>(
   options?: Omit<
     UseMutationOptions<TResponse, AxiosError, TVariables>,
     "mutationFn"
-  >
+  >,
+  axiosRequestConfig?: AxiosRequestConfig
 ) => {
   const { pathFn, enableAbort = true, isPrivate = true } = config;
   const { publicDelete } = usePublicAxios();
@@ -107,10 +140,24 @@ export const useDeleteMutation = <TResponse, TVariables extends { id: number }>(
 
   const mutationFn = ({ id }: TVariables) => {
     if (isPrivate) {
-      return privateDelete<TResponse>(pathFn(id), { activateAbort: enableAbort });
+      return privateDelete<TResponse>(
+        pathFn(id),
+        { activateAbort: enableAbort },
+        axiosRequestConfig
+      );
     }
-    return publicDelete<TResponse>(pathFn(id), { activateAbort: enableAbort });
+    return publicDelete<TResponse>(
+      pathFn(id),
+      { activateAbort: enableAbort },
+      axiosRequestConfig
+    );
   };
 
   return useMutation<TResponse, AxiosError, TVariables>(mutationFn, options);
 };`;
+
+export const exportMutations = `export * from "./hooks/useReactQuery";
+export * from "./hooks/usePostMutation";
+export * from "./hooks/usePutMutation";
+export * from "./hooks/usePatchMutation";
+export * from "./hooks/useDeleteMutation";`;

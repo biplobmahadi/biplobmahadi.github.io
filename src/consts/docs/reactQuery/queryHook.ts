@@ -1,4 +1,4 @@
-export const queryHook = `import { AxiosError } from "axios";
+export const queryHook = `import { AxiosError, AxiosRequestConfig } from "axios";
 import { QueryFunctionContext, useQuery, UseQueryOptions } from "react-query";
 import { TQueryKey } from "./types/queryKey";
 import { usePrivateAxios, usePublicAxios } from "../../axios";
@@ -8,7 +8,8 @@ export const useReactQuery = <TResponse>(
   options?: Omit<
     UseQueryOptions<TResponse, AxiosError, TResponse, TQueryKey>,
     "queryKey" | "queryFn"
-  >
+  >,
+  axiosRequestConfig?: AxiosRequestConfig
 ) => {
   const { publicGet } = usePublicAxios();
   const { privateGet } = usePrivateAxios();
@@ -17,14 +18,22 @@ export const useReactQuery = <TResponse>(
     const [{ queryPath, enableAbort = true, isPrivate = true }] = queryKey;
 
     if (isPrivate) {
-      return privateGet<TResponse>(queryPath, {
-        activateAbort: enableAbort,
-      });
+      return privateGet<TResponse>(
+        queryPath,
+        {
+          activateAbort: enableAbort,
+        },
+        axiosRequestConfig
+      );
     }
 
-    return publicGet<TResponse>(queryPath, {
-      activateAbort: enableAbort,
-    });
+    return publicGet<TResponse>(
+      queryPath,
+      {
+        activateAbort: enableAbort,
+      },
+      axiosRequestConfig
+    );
   };
 
   return useQuery<TResponse, AxiosError, TResponse, TQueryKey>(

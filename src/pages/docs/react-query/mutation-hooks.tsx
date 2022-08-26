@@ -6,6 +6,7 @@ import CustomPrism from "../../../libs/prism";
 import GiscusDiscussion from "../../../libs/giscus";
 import {
   deleteMutation,
+  exportMutations,
   mutationConfig,
   patchMutation,
   postMutation,
@@ -90,6 +91,14 @@ const MutationHooks: NextPage = () => {
           Finally, we will move all React Query related folders to the{" "}
           <b>libs/reactQuery</b> folder.
         </Text>
+
+        <Text size="sm" mt={10}>
+          And, we will export our hooks from <b>libs/reactQuery</b> folder.
+        </Text>
+        <Text size="sm" mt={10}>
+          Create <b>libs/reactQuery/index.ts</b>
+        </Text>
+        <CustomPrism code={exportMutations} language="typescript" />
 
         <div style={{ marginTop: "20px" }}>
           <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
