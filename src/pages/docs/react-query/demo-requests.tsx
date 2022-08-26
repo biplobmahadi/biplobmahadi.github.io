@@ -5,7 +5,16 @@ import { Anchor, Text, useMantineTheme } from "@mantine/core";
 import useDocsStyles from "../../../../helpers/useDocsStyles";
 import GiscusDiscussion from "../../../libs/giscus";
 import CustomPrism from "../../../libs/prism";
-import { providerAdd } from "../../../consts/docs/reactQuery";
+import {
+  apiHookDelete,
+  apiHookGet,
+  apiHookPost,
+  apiHookPut,
+  demoRequests,
+  exportHooks,
+  providerAdd,
+  todoInterface,
+} from "../../../consts/docs/reactQuery";
 
 const DemoRequests: NextPage = () => {
   const { colorScheme } = useMantineTheme();
@@ -46,11 +55,46 @@ const DemoRequests: NextPage = () => {
         <CustomPrism code={providerAdd} language="tsx" />
 
         <Text size="sm" mt={20}>
-          Create <b>components/DemoComponent.tsx</b>
+          Now, let's create API hooks to handle all requests.
         </Text>
-        <CustomPrism code={``} language="tsx" />
+        <Text size="sm" mt={10}>
+          Create <b>api/todo/useGetTodos.ts</b>
+        </Text>
+        <CustomPrism code={apiHookGet} language="typescript" />
 
-        <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        <Text size="sm" mt={20}>
+          Create <b>api/todo/usePostTodo.ts</b>
+        </Text>
+        <CustomPrism code={apiHookPost} language="typescript" />
+
+        <Text size="sm" mt={20}>
+          Create <b>api/todo/usePutTodo.ts</b>
+        </Text>
+        <CustomPrism code={apiHookPut} language="typescript" />
+
+        <Text size="sm" mt={20}>
+          Create <b>api/todo/useDeleteTodo.ts</b>
+        </Text>
+        <CustomPrism code={apiHookDelete} language="typescript" />
+
+        <Text size="sm" mt={20}>
+          Now create <b>api/todo/index.ts</b> to export all todo API hooks
+        </Text>
+        <CustomPrism code={exportHooks} language="typescript" />
+
+        <Text size="sm" mt={20}>
+          Create <b>interfaces/todo.ts</b> outside the components folder
+        </Text>
+        <CustomPrism code={todoInterface} language="typescript" />
+
+        <Text size="sm" mt={20}>
+          Finally create <b>components/DemoComponent.tsx</b>
+        </Text>
+        <CustomPrism code={demoRequests} language="tsx" />
+
+        <div style={{ marginTop: "20px" }}>
+          <GiscusDiscussion theme={colorScheme === "dark" ? "dark" : "light"} />
+        </div>
       </div>
     </Fragment>
   );
