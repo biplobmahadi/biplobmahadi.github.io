@@ -19,6 +19,11 @@ const UIPaths = {
         return `/docs/react-query/${slug}`;
       },
     },
+    ReactContext: {
+      GetReactRouterDoc: (slug: string) => {
+        return `/docs/react-context/${slug}`;
+      },
+    },
     ReactRouter: {
       GetReactRouterDoc: (slug: string) => {
         return `/docs/react-router/${slug}`;
