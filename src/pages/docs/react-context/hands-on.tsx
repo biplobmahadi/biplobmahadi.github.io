@@ -44,7 +44,8 @@ const HandsOn: NextPage = () => {
         <Text size="sm" my={20}>
           We will create a counter context and wrap our app with this context
           provider. Then we will create a component and consume our counter
-          context state on it.
+          context state on it. Obviously we will manage the context state by
+          using the useReducer hook.
         </Text>
 
         <Text size="sm">
