@@ -27,7 +27,7 @@ const MutationHooks: NextPage = () => {
         </Text>
         <section>
           <Text size="xs" color="dimmed">
-            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+            Published: Jul 24, 2022 | Last Modified: Jul 24, 2022
           </Text>
         </section>
         <Text size="sm" my={20}>
@@ -36,8 +36,8 @@ const MutationHooks: NextPage = () => {
         </Text>
 
         <Text size="sm">
-          Create some interfaces in interfaces/mutationConfig.ts which will be
-          used to create our mutation hooks.
+          Create some interfaces in <b>interfaces/mutationConfig.ts</b> which
+          will be used to create our mutation hooks.
         </Text>
         <CustomPrism code={mutationConfig} language="typescript" />
 

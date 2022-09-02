@@ -22,7 +22,7 @@ const QueryHook: NextPage = () => {
         </Text>
         <section>
           <Text size="xs" color="dimmed">
-            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+            Published: Jul 23, 2022 | Last Modified: Jul 23, 2022
           </Text>
         </section>
         <Text size="sm" my={20}>
@@ -40,6 +40,7 @@ const QueryHook: NextPage = () => {
           Create <b>hooks/useReactQuery.ts</b>
         </Text>
         <CustomPrism code={queryHook} language="typescript" />
+
         <Text size="sm" mt={20}>
           Create <b>types/queryKey.ts</b> for type.
         </Text>

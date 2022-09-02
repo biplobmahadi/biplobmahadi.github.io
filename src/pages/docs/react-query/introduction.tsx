@@ -18,7 +18,7 @@ const Introduction: NextPage = () => {
         </Text>
         <section>
           <Text size="xs" color="dimmed">
-            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+            Published: Jul 23, 2022 | Last Modified: Jul 23, 2022
           </Text>
         </section>
         <Text size="sm" my={20}>
@@ -30,6 +30,7 @@ const Introduction: NextPage = () => {
           React Query with{" "}
           <b>caching, synchronizing and updating server state</b>.
         </Text>
+
         <Text id="whyReactQuery" size="sm" mb={20} weight={700}>
           Why should we use React Query?
         </Text>
@@ -54,6 +55,7 @@ const Introduction: NextPage = () => {
           greater control and much more features in React Query. Also React
           Query is more optimized.
         </Text>
+
         <Text id="ourAchievement" size="sm" mb={20} weight={700}>
           What do we achieve here?
         </Text>
@@ -63,8 +65,8 @@ const Introduction: NextPage = () => {
           <b>GET, POST, PUT, PATCH and DELETE</b> requests with all features.
         </Text>
         <Text size="sm" mb={20}>
-          We don’t need to write query functions and mutation functions every
-          time for every request after creating our custom hooks.
+          We don&apos;t need to write query functions and mutation functions
+          every time for every request after creating our custom hooks.
         </Text>
         <Text size="sm" mb={20}>
           After this setup it will be so much easier to handle all API requests
