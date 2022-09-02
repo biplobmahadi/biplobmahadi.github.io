@@ -2,7 +2,7 @@ import { createStyles } from "@mantine/core";
 
 const useBlogsStyles = createStyles((theme) => ({
   containerClass: {
-    margin: "3% 15%",
+    margin: "2% 15%",
     [theme.fn.smallerThan("md")]: {
       margin: "2%",
     },

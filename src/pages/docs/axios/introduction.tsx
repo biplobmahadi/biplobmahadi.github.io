@@ -48,7 +48,7 @@ const Introduction: NextPage = () => {
           access and refresh token for our react application.
         </Text>
         <Text mb={20} weight={700}>
-          So What do we cover?
+          So, What do we cover?
         </Text>
         <div style={{ paddingLeft: "5%" }}>
           <ul>
@@ -68,6 +68,7 @@ const Introduction: NextPage = () => {
             </li>
           </ul>
         </div>
+
         <Text size="sm" my={20}>
           The documentation of Axios is great.{" "}
           <Anchor href="https://axios-http.com/docs/intro" target="_blank">
