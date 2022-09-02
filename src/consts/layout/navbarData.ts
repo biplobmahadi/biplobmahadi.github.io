@@ -76,23 +76,18 @@ export const navbarData = [
     links: [
       {
         label: "Introduction",
-        link: UIPaths.Docs.ReactContext.GetReactRouterDoc("introduction"),
+        link: UIPaths.Docs.ReactContext.GetReactContextDoc("introduction"),
       },
       {
         label: "Hands-On",
-        link: UIPaths.Docs.ReactContext.GetReactRouterDoc("hands-on"),
+        link: UIPaths.Docs.ReactContext.GetReactContextDoc("hands-on"),
       },
     ],
   },
   {
     label: "React Router",
     icon: BrandReactNative,
-    links: [
-      {
-        label: "Role Based Routing",
-        link: UIPaths.Docs.ReactRouter.GetReactRouterDoc("role-base-routing"),
-      },
-    ],
+    links: [],
   },
   {
     label: "TypeScript",

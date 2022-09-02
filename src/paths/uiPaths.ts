@@ -20,13 +20,8 @@ const UIPaths = {
       },
     },
     ReactContext: {
-      GetReactRouterDoc: (slug: string) => {
+      GetReactContextDoc: (slug: string) => {
         return `/docs/react-context/${slug}`;
-      },
-    },
-    ReactRouter: {
-      GetReactRouterDoc: (slug: string) => {
-        return `/docs/react-router/${slug}`;
       },
     },
   },
