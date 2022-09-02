@@ -25,6 +25,9 @@ export const Skills: FC = () => {
             <Badge variant="dot" m={3}>
               Python
             </Badge>
+            <Badge variant="dot" m={3}>
+              SQL
+            </Badge>
           </div>
         </Grid.Col>
         <Grid.Col sm={6}>
@@ -76,6 +79,9 @@ export const Skills: FC = () => {
               DRF
             </Badge>
             <Badge variant="dot" m={3}>
+              Flask
+            </Badge>
+            <Badge variant="dot" m={3}>
               Postgresql
             </Badge>
             <Badge variant="dot" m={3}>
@@ -107,7 +113,7 @@ export const Skills: FC = () => {
               Functional Programming
             </Badge>
             <Badge variant="dot" m={3}>
-              Software Testing
+              Testing
             </Badge>
             <Badge variant="dot" m={3}>
               Design Patterns

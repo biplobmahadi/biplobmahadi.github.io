@@ -5,9 +5,10 @@ export const ShortIntro: FC = () => {
   return (
     <Card mt="md" radius="lg" shadow="sm">
       <Text size="sm">
-        A dedicated programmer having problem solving skills. I want to learn
-        advanced knowledge of software engineering and architecture. My first
-        priority is to learn and implement the skills.
+        Love the culture of software industry. A team player who can manage the
+        team with high productivity & lots of fun. A quick learner who always
+        prioritizes learning opportunities & challenges. Want to learn advanced
+        software architecture & engineering. Always follow the convention :)
       </Text>
     </Card>
   );
