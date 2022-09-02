@@ -11,16 +11,16 @@ export const Skills: FC = () => {
               Languages
             </Text>
             <Badge variant="dot" m={3}>
-              C/C++
+              C
+            </Badge>
+            <Badge variant="dot" m={3}>
+              C++
             </Badge>
             <Badge variant="dot" m={3}>
               JavaScript
             </Badge>
             <Badge variant="dot" m={3}>
               TypeScript
-            </Badge>
-            <Badge variant="dot" m={3}>
-              C#
             </Badge>
             <Badge variant="dot" m={3}>
               Python
@@ -64,7 +64,7 @@ export const Skills: FC = () => {
               Backend
             </Text>
             <Badge variant="dot" m={3}>
-              DotNet
+              NodeJs
             </Badge>
             <Badge variant="dot" m={3}>
               ExpressJs
@@ -89,7 +89,7 @@ export const Skills: FC = () => {
         <Grid.Col sm={6}>
           <div style={{ textAlign: "center" }}>
             <Text weight={700} size="xs" mb={10} transform="uppercase">
-              DevTools
+              DevTools & Concepts
             </Text>
             <Badge variant="dot" m={3}>
               Git
@@ -99,6 +99,18 @@ export const Skills: FC = () => {
             </Badge>
             <Badge variant="dot" m={3}>
               Nginx
+            </Badge>
+            <Badge variant="dot" m={3}>
+              OOP
+            </Badge>
+            <Badge variant="dot" m={3}>
+              Functional Programming
+            </Badge>
+            <Badge variant="dot" m={3}>
+              Software Testing
+            </Badge>
+            <Badge variant="dot" m={3}>
+              Design Patterns
             </Badge>
           </div>
         </Grid.Col>
