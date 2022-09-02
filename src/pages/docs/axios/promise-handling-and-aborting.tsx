@@ -25,7 +25,7 @@ const PromiseHandlingAndAborting: NextPage = () => {
         </Text>
         <section>
           <Text size="xs" color="dimmed">
-            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+            Published: Jul 16, 2022 | Last Modified: Jul 16, 2022
           </Text>
         </section>
         <Text size="sm" my={20}>
@@ -45,6 +45,7 @@ const PromiseHandlingAndAborting: NextPage = () => {
           promises. It will also be great for adding abort or cancellation in
           only one place and every request will use this abort or cancellation.
         </Text>
+
         <Text id="promiseHandling" weight={700} mb={10}>
           Promise handling
         </Text>

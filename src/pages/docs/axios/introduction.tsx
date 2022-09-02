@@ -20,7 +20,7 @@ const Introduction: NextPage = () => {
         </Text>
         <section>
           <Text size="xs" color="dimmed">
-            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+            Published: Jul 16, 2022 | Last Modified: Jul 16, 2022
           </Text>
         </section>
         <Text size="sm" my={20}>
@@ -47,6 +47,7 @@ const Introduction: NextPage = () => {
           authorization header. We will configure the authorization header with
           access and refresh token for our react application.
         </Text>
+
         <Text mb={20} weight={700}>
           So, What do we cover?
         </Text>

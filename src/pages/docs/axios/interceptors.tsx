@@ -30,7 +30,7 @@ const Interceptors: NextPage = () => {
         </Text>
         <section>
           <Text size="xs" color="dimmed">
-            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+            Published: Jul 17, 2022 | Last Modified: Jul 17, 2022
           </Text>
         </section>
         <Text size="sm" my={20}>
@@ -38,7 +38,8 @@ const Interceptors: NextPage = () => {
           they are handled. There are 2 types of interceptor. One is a request
           interceptor and another is a response interceptor.
         </Text>
-        <Text size="sm" mb={20}>
+
+        <Text size="sm" mb={20} weight={700}>
           What does the interceptor do?
         </Text>
         <Text size="sm" mb={20}>

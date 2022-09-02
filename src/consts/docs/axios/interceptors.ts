@@ -62,6 +62,7 @@ export default function useRefreshToken() {
   const refresh = async () => {
     const response = await publicGet(Your_Refresh_API_Path, {
       activateAbort: false,
+      withcredentials: true,
     });
 
     // You can set your new access token where you want!

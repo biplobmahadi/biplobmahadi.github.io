@@ -12,7 +12,6 @@ const request = async <R, D = any>(
       method: method,
       url: url,
       data: data,
-      signal: controller.signal,
       ...config,
     });
 

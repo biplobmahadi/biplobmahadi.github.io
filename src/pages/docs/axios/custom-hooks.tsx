@@ -25,7 +25,7 @@ const RequestHooks: NextPage = () => {
         </Text>
         <section>
           <Text size="xs" color="dimmed">
-            Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+            Published: Jul 16, 2022 | Last Modified: Jul 16, 2022
           </Text>
         </section>
         <Text size="sm" my={20}>
@@ -43,11 +43,11 @@ const RequestHooks: NextPage = () => {
         </Text>
         <CustomPrism code={usePrivateAxiosCode} language="typescript" />
 
-        <Text size="sm" my={20}>
+        <Text size="sm" mt={20} mb={10}>
           We can see, both are the same. Now we need to add the authorization
           header with all private requests using our private instance.
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm" mb={10}>
           We will add the authorization using the axios interceptor, so that we
           can also configure access and refresh tokens.
         </Text>
