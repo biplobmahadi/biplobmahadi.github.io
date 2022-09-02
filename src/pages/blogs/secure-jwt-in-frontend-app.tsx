@@ -1,4 +1,4 @@
-import { useMantineTheme, Text, Card, Code, Anchor } from "@mantine/core";
+import { useMantineTheme, Text, Card, Anchor } from "@mantine/core";
 import { NextPage } from "next";
 import Head from "next/head";
 import useBlogsStyles from "../../../helpers/useBlogsStyles";
@@ -20,7 +20,7 @@ const SecureJWTInFrontendApp: NextPage = () => {
       </Text>
       <section>
         <Text size="xs" color="dimmed">
-          Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+          Published: Aug 06, 2022 | Last Modified: Aug 06, 2022
         </Text>
       </section>
 
@@ -36,8 +36,8 @@ const SecureJWTInFrontendApp: NextPage = () => {
           As a beginner most of us can&apos;t use JWT securely. We use JWT in
           our frontend app like, after logged in we store our JWT in local
           storage or session storage. But it can be accessible with javascript
-          scripts. This is as bad as it sounds, an XSS attack could give an
-          external attacker access to the token.
+          scripts. This is as bad as it sounds, an <b>XSS attack</b> could give
+          an external attacker access to the token.
         </Text>
 
         <Text size="sm" mb={20}>
@@ -64,9 +64,9 @@ const SecureJWTInFrontendApp: NextPage = () => {
         </Text>
         <Text size="sm" mb={20}>
           We will set refresh token in browser&apos;s cookies with a path and
-          with httponly (no javascript script can get our token) must. We will
-          set the path as the path of the refresh API (the API by which we can
-          get a new access token). We know browsers always send cookies in every
+          with httponly (no javascript script can get our token). We will set
+          the path as the path of the refresh API (the API by which we can get a
+          new access token). We know browsers always send cookies in every
           request. When we set the path as a refresh API, browser will only send
           cookies when we request to get a new access token. And we also set our
           refresh token in cookies with expiration time. When a user logout from
@@ -131,7 +131,14 @@ const SecureJWTInFrontendApp: NextPage = () => {
 
         <Card className={cardClasses.noteCard} my="lg" radius="lg" shadow="sm">
           <Text size="sm">
-            We can set up this process using Axios interceptors.
+            We can set up this process using Axios interceptors.{" "}
+            <Anchor
+              href="https://biplobmahadi.github.io/docs/axios/interceptors"
+              target="_blank"
+            >
+              Check it here
+            </Anchor>
+            .
           </Text>
         </Card>
 

@@ -27,18 +27,18 @@ const FakeJsonServer: NextPage = () => {
       </Text>
       <section>
         <Text size="xs" color="dimmed">
-          Published: Jul 28, 2022 | Last Modified: Jul 31, 2022
+          Published: Aug 13, 2022 | Last Modified: Aug 13, 2022
         </Text>
       </section>
 
       <main>
         <Text size="sm" my={20}>
           As a frontend engineer we always need data as <b>REST</b> or{" "}
-          <b>GraphQL</b> or <b>gRPC</b> API from a backend server . But
-          it&apos;s time consuming to create a backend service to practice our
-          frontend things.
+          <b>GraphQL</b> or <b>gRPC</b> API from a backend server. But it&apos;s
+          time consuming to create a backend service to practice our frontend
+          things.
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm" mb={10}>
           So, we can create a fake <b>REST</b> API server with zero coding in
           less than 30 sec using{" "}
           <Anchor
@@ -49,7 +49,7 @@ const FakeJsonServer: NextPage = () => {
           </Anchor>{" "}
           to practice frontend things.
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm" mb={10}>
           We can make <b>GET</b>, <b>POST</b>, <b>PUT</b>, <b>PATCH</b> and{" "}
           <b>DELETE</b> requests, changes will be automatically and safely saved
           to db.json using lowdb.
@@ -61,18 +61,19 @@ const FakeJsonServer: NextPage = () => {
         <Text size="sm" mb={20}>
           Let&apos;s start ...
         </Text>
+
         <Text size="sm">
-          Create a <b>db.json</b> file with data.
+          Create a <b>db.json</b> file with data
         </Text>
         <CustomPrism code={dbCode} language="json" />
         <Text size="sm" my={20}>
           Start JSON Server:{" "}
           <Code color="blue">json-server --watch db.json --port 4000</Code>
         </Text>
+
         <Text size="sm" weight={700}>
           JSON Server provides all request:
         </Text>
-
         <div style={{ padding: "1% 5%" }}>
           <Text size="sm">
             <b style={{ paddingRight: "1%" }}>GET</b> /posts
@@ -148,14 +149,15 @@ const FakeJsonServer: NextPage = () => {
           </Anchor>{" "}
           to add some extra power.
         </Text>
-        <Text mb={20} weight={700}>
+
+        <Text mb={10} weight={700}>
           But the best part is: Module
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm" mb={10}>
           We can use the json-server project as a module in combination with
           other Express middlewares.
         </Text>
-        <Text size="sm" mb={20}>
+        <Text size="sm" mb={10}>
           Here, we will create a project using json-server only to get responses
           in specific format.
         </Text>
