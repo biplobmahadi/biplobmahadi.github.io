@@ -74,7 +74,8 @@ const SecureJWTInFrontendApp: NextPage = () => {
         </Text>
 
         <Text size="sm" weight={700}>
-          To store refresh token in the browser's cookies, there are 2 things.
+          To store refresh token in the browser&apos;s cookies, there are 2
+          things.
         </Text>
         <div style={{ paddingLeft: "5%" }}>
           <ul>
