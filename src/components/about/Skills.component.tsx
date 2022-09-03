@@ -107,6 +107,9 @@ export const Skills: FC = () => {
               Nginx
             </Badge>
             <Badge variant="dot" m={3}>
+              AWS
+            </Badge>
+            <Badge variant="dot" m={3}>
               OOP
             </Badge>
             <Badge variant="dot" m={3}>
