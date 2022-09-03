@@ -8,7 +8,7 @@ import {
   usePublicAxiosCode,
 } from "../../../consts/docs/axios";
 import GiscusDiscussion from "../../../libs/giscus";
-import useDocsStyles from "../../../../helpers/useDocsStyles";
+import useDocsStyles from "../../../helpers/useDocsStyles";
 
 const RequestHooks: NextPage = () => {
   const { colorScheme } = useMantineTheme();

@@ -1,8 +1,8 @@
 import { useMantineTheme, Text, Card, Anchor } from "@mantine/core";
 import { NextPage } from "next";
 import Head from "next/head";
-import useBlogsStyles from "../../../helpers/useBlogsStyles";
-import useNoteCardStyles from "../../../helpers/useNoteCardStyles";
+import useBlogsStyles from "../../helpers/useBlogsStyles";
+import useNoteCardStyles from "../../helpers/useNoteCardStyles";
 import GiscusDiscussion from "../../libs/giscus";
 
 const SecureJWTInFrontendApp: NextPage = () => {

@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import React, { Fragment } from "react";
 import { Text, useMantineTheme } from "@mantine/core";
-import useDocsStyles from "../../../../helpers/useDocsStyles";
+import useDocsStyles from "../../../helpers/useDocsStyles";
 import CustomPrism from "../../../libs/prism";
 import { queryHook, typeForQueryHook } from "../../../consts/docs/reactQuery";
 import GiscusDiscussion from "../../../libs/giscus";

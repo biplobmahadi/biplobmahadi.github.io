@@ -1,8 +1,8 @@
 import { useMantineTheme, Text, Card, Code, Anchor } from "@mantine/core";
 import { NextPage } from "next";
 import Head from "next/head";
-import useBlogsStyles from "../../../helpers/useBlogsStyles";
-import useNoteCardStyles from "../../../helpers/useNoteCardStyles";
+import useBlogsStyles from "../../helpers/useBlogsStyles";
+import useNoteCardStyles from "../../helpers/useNoteCardStyles";
 import {
   dbCode,
   packageJson,

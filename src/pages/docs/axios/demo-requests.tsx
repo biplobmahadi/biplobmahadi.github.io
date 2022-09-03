@@ -8,7 +8,7 @@ import {
   demoComponentCode,
   postsInterfaceCode,
 } from "../../../consts/docs/axios";
-import useDocsStyles from "../../../../helpers/useDocsStyles";
+import useDocsStyles from "../../../helpers/useDocsStyles";
 
 const DemoRequests: NextPage = () => {
   const { colorScheme } = useMantineTheme();

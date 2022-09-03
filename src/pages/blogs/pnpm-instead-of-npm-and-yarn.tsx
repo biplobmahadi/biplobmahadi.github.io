@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { Text } from "@mantine/core";
 import Head from "next/head";
-import useBlogsStyles from "../../../helpers/useBlogsStyles";
+import useBlogsStyles from "../../helpers/useBlogsStyles";
 
 const PnpmInsteadOfNpmAndYarn: NextPage = () => {
   const { classes } = useBlogsStyles();

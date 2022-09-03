@@ -2,7 +2,7 @@ import { Anchor, Text } from "@mantine/core";
 import { NextPage } from "next";
 import Head from "next/head";
 import React, { Fragment } from "react";
-import useDocsStyles from "../../../helpers/useDocsStyles";
+import useDocsStyles from "../../helpers/useDocsStyles";
 
 const Welcome: NextPage = () => {
   const { classes } = useDocsStyles();

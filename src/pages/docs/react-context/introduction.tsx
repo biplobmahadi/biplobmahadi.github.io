@@ -2,7 +2,7 @@ import { useMantineTheme, Text, Anchor } from "@mantine/core";
 import { NextPage } from "next";
 import Head from "next/head";
 import React, { Fragment } from "react";
-import useDocsStyles from "../../../../helpers/useDocsStyles";
+import useDocsStyles from "../../../helpers/useDocsStyles";
 import GiscusDiscussion from "../../../libs/giscus";
 
 const Introduction: NextPage = () => {
