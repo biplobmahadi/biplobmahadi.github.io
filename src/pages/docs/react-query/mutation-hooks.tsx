@@ -41,7 +41,13 @@ const MutationHooks: NextPage = () => {
         </Text>
         <CustomPrism code={mutationConfig} language="typescript" />
 
-        <Text id="postMutation" size="sm" mb={10} mt={30} weight={700}>
+        <Text
+          id="postMutation"
+          sx={{ scrollMarginTop: "95px" }}
+          mb={10}
+          mt={30}
+          weight={700}
+        >
           Create Post Mutation
         </Text>
         <Text size="sm">
@@ -49,7 +55,13 @@ const MutationHooks: NextPage = () => {
         </Text>
         <CustomPrism code={postMutation} language="typescript" />
 
-        <Text id="putMutation" size="sm" mt={30} mb={10} weight={700}>
+        <Text
+          id="putMutation"
+          sx={{ scrollMarginTop: "95px" }}
+          mt={30}
+          mb={10}
+          weight={700}
+        >
           Create Put Mutation
         </Text>
         <Text size="sm">
@@ -61,7 +73,13 @@ const MutationHooks: NextPage = () => {
         </Text>
         <CustomPrism code={putMutation} language="typescript" />
 
-        <Text id="patchMutation" size="sm" mt={30} mb={10} weight={700}>
+        <Text
+          id="patchMutation"
+          sx={{ scrollMarginTop: "95px" }}
+          mt={30}
+          mb={10}
+          weight={700}
+        >
           Create Patch Mutation
         </Text>
         <Text size="sm">
@@ -74,7 +92,13 @@ const MutationHooks: NextPage = () => {
         </Text>
         <CustomPrism code={patchMutation} language="typescript" />
 
-        <Text id="deleteMutation" size="sm" mt={30} mb={10} weight={700}>
+        <Text
+          id="deleteMutation"
+          sx={{ scrollMarginTop: "95px" }}
+          mt={30}
+          mb={10}
+          weight={700}
+        >
           Create Delete Mutation
         </Text>
         <Text size="sm">

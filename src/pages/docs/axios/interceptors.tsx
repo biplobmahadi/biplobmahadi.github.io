@@ -13,7 +13,7 @@ import {
   usePrivateAxiosCodeUpdated,
   useRefreshTokenCode,
 } from "../../../consts/docs/axios";
-import useNoteCardStyles from "../../../../helpers/useNoteCardStyles";
+import useNoteCardStyles from "../../../helpers/useNoteCardStyles";
 
 const Interceptors: NextPage = () => {
   const { colorScheme } = useMantineTheme();
@@ -64,7 +64,12 @@ const Interceptors: NextPage = () => {
           interceptor in this private hook.
         </Text>
 
-        <Text id="requestInterceptor" weight={700} mb={20}>
+        <Text
+          id="requestInterceptor"
+          sx={{ scrollMarginTop: "95px" }}
+          weight={700}
+          mb={20}
+        >
           Request interceptor
         </Text>
         <Text size="sm" mb={20}>
@@ -82,7 +87,13 @@ const Interceptors: NextPage = () => {
         </Text>
         <CustomPrism code={requestInterceptorCode} language="typescript" />
 
-        <Text id="responseInterceptor" weight={700} mt={30} mb={20}>
+        <Text
+          id="responseInterceptor"
+          sx={{ scrollMarginTop: "95px" }}
+          weight={700}
+          mt={30}
+          mb={20}
+        >
           Response interceptor
         </Text>
         <Text size="sm" mb={20}>
@@ -140,7 +151,13 @@ const Interceptors: NextPage = () => {
           language="typescript"
         />
 
-        <Text id="addingInterceptors" weight={700} mt={30} mb={20}>
+        <Text
+          id="addingInterceptors"
+          sx={{ scrollMarginTop: "95px" }}
+          weight={700}
+          mt={30}
+          mb={20}
+        >
           Adding interceptors with private hook
         </Text>
         <Text size="sm" mb={20}>

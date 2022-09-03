@@ -41,7 +41,12 @@ const Instances: NextPage = () => {
           header. So we need 2 different instances to request with the
           authorization header and without.
         </Text>
-        <Text weight={700} mb={10}>
+        <Text
+          id="publicInstance"
+          sx={{ scrollMarginTop: "95px" }}
+          weight={700}
+          mb={10}
+        >
           Public Instance
         </Text>
         <Text size="sm">
@@ -49,7 +54,13 @@ const Instances: NextPage = () => {
         </Text>
         <CustomPrism code={publicInstanceCode} language="typescript" />
 
-        <Text id="privateInstance" weight={700} mb={10} mt={30}>
+        <Text
+          id="privateInstance"
+          sx={{ scrollMarginTop: "95px" }}
+          weight={700}
+          mb={10}
+          mt={30}
+        >
           Private Instance
         </Text>
         <Text size="sm">

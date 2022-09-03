@@ -46,7 +46,12 @@ const PromiseHandlingAndAborting: NextPage = () => {
           only one place and every request will use this abort or cancellation.
         </Text>
 
-        <Text id="promiseHandling" weight={700} mb={10}>
+        <Text
+          id="promiseHandling"
+          sx={{ scrollMarginTop: "95px" }}
+          weight={700}
+          mb={10}
+        >
           Promise handling
         </Text>
         <Text size="sm">
@@ -54,7 +59,13 @@ const PromiseHandlingAndAborting: NextPage = () => {
         </Text>
         <CustomPrism code={requestCode} language="typescript" />
 
-        <Text id="aborting" weight={700} mb={10} mt={30}>
+        <Text
+          id="aborting"
+          sx={{ scrollMarginTop: "95px" }}
+          weight={700}
+          mb={10}
+          mt={30}
+        >
           Aborting
         </Text>
         <Text size="sm" mb={20}>
@@ -85,7 +96,13 @@ const PromiseHandlingAndAborting: NextPage = () => {
         </Text>
         <CustomPrism code={abortOptionInterfaceCode} language="typescript" />
 
-        <Text id="necessaryRequests" weight={700} mb={10} mt={30}>
+        <Text
+          id="necessaryRequests"
+          sx={{ scrollMarginTop: "95px" }}
+          weight={700}
+          mb={10}
+          mt={30}
+        >
           Necessary requests
         </Text>
         <Text size="sm" mb={20}>

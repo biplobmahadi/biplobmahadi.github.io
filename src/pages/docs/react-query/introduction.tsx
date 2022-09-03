@@ -31,7 +31,12 @@ const Introduction: NextPage = () => {
           <b>caching, synchronizing and updating server state</b>.
         </Text>
 
-        <Text id="whyReactQuery" size="sm" mb={20} weight={700}>
+        <Text
+          id="whyReactQuery"
+          sx={{ scrollMarginTop: "95px" }}
+          mb={10}
+          weight={700}
+        >
           Why should we use React Query?
         </Text>
         <Text size="sm" mb={20}>
@@ -56,7 +61,12 @@ const Introduction: NextPage = () => {
           Query is more optimized.
         </Text>
 
-        <Text id="ourAchievement" size="sm" mb={20} weight={700}>
+        <Text
+          id="ourAchievement"
+          sx={{ scrollMarginTop: "95px" }}
+          mb={10}
+          weight={700}
+        >
           What do we achieve here?
         </Text>
         <Text size="sm" mb={20}>
