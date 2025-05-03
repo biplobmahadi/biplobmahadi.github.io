@@ -17,7 +17,7 @@ export const Experiences: FC = () => {
         />
         <div>
           <Text size="xs" weight={700} color="dimmed">
-            Associate Software Engineer
+            Software Engineer
           </Text>
 
           <Text weight={700}>Kaz Software </Text>
@@ -47,7 +47,7 @@ export const Experiences: FC = () => {
 
           <Text weight={700}>Drobboo Limited</Text>
           <Text size="xs" color="dimmed">
-            Jun 2021 - Jul 2021
+            Oct 2020 - Jul 2021
           </Text>
 
           <Group noWrap spacing={10} mt={3}>

@@ -20,7 +20,7 @@ export const Education: FC = () => {
             Rajshahi University of Engineering & Technology
           </Text>
           <Text size="xs" color="dimmed">
-            Feb 2016 - Mar 2021
+            Feb 2016 - Mar 2020
           </Text>
 
           <Group noWrap spacing={10} mt={3}>

@@ -42,6 +42,9 @@ export const Skills: FC = () => {
               NextJs
             </Badge>
             <Badge variant="dot" m={3}>
+              Angular
+            </Badge>
+            <Badge variant="dot" m={3}>
               Redux
             </Badge>
             <Badge variant="dot" m={3}>
@@ -56,9 +59,6 @@ export const Skills: FC = () => {
             <Badge variant="dot" m={3}>
               SWR
             </Badge>
-            <Badge variant="dot" m={3}>
-              Package needed
-            </Badge>
           </div>
         </Grid.Col>
         <Grid.Col sm={6}>
@@ -68,6 +68,9 @@ export const Skills: FC = () => {
             </Text>
             <Badge variant="dot" m={3}>
               NodeJs
+            </Badge>
+            <Badge variant="dot" m={3}>
+              NestJs
             </Badge>
             <Badge variant="dot" m={3}>
               ExpressJs
@@ -86,9 +89,6 @@ export const Skills: FC = () => {
             </Badge>
             <Badge variant="dot" m={3}>
               MongoDB
-            </Badge>
-            <Badge variant="dot" m={3}>
-              Package needed
             </Badge>
           </div>
         </Grid.Col>

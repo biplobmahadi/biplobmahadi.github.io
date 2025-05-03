@@ -25,7 +25,7 @@ const AboutPage: NextPage = () => {
       <div style={{ margin: "2% 3%" }}>
         <ShortIntro />
         <Skills />
-        <Packages />
+        {/* <Packages /> */}
         <div style={{ height: "100%" }}>
           <Grid columns={24}>
             <Grid.Col sm={12}>

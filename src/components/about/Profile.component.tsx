@@ -44,14 +44,14 @@ export const Profile: FC = () => {
         >
           <BrandLinkedin size={20} color="#0072b1" />
         </a>
-        <a
+        {/* <a
           href="https://facebook.com/profile.php?id=100014558505131"
           target="_blank"
           rel="noopener noreferrer"
           style={{ padding: "0px 3px" }}
         >
           <BrandFacebook size={20} color="#4267B2" />
-        </a>
+        </a> */}
         <div>
           <Text size="xs">+8801753183119 | biplob.ruet15@gmail.com</Text>
           <Text size="xs" color="dimmed">
